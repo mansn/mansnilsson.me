@@ -1,2 +1,2 @@
 # mansnilsson.me
-Måns personal
+Måns' homepage
