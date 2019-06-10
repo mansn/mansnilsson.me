@@ -1,5 +1,5 @@
 import React from 'react';
-import me from '../src/assets/me.jpeg';
+import me from '../src/assets/me.png';
 import './App.css';
 
 function App() {
