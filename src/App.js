@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useTransition, animated } from 'react-spring'
-import me from '../src/assets/me.png'
 import './App.css'
 
 function App() {
@@ -22,7 +21,10 @@ function App() {
             <animated.div key={key} style={props}>
               <main>
                 <header className="App-header">
-                  <img src={me} className="me-logo" alt="månsnilsson" />
+                  <picture>
+                    <source type="image/webp" srcset="/images/me.webp" />
+                    <img src="/images/me.png" className="me-logo" alt="månsnilsson" />
+                  </picture>
                   <h1>Måns Nilsson</h1>
                 </header>
                 <footer>
