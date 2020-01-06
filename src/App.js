@@ -23,7 +23,7 @@ function App() {
                 <header className="App-header">
                   <picture>
                     <source type="image/webp" srcSet="/images/me.webp" />
-                    <img src="/images/me.png" className="me-logo" alt="månsnilsson" />
+                    <img src="/images/me.jpg" className="me-logo" alt="månsnilsson" />
                   </picture>
                   <h1>Måns Nilsson</h1>
                 </header>
