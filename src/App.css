@@ -9,6 +9,16 @@
   padding: 40px;
 }
 
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
 .me-logo {
   height: 40vmin;
   pointer-events: none;

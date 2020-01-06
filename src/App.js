@@ -28,9 +28,17 @@ function App() {
                   <h1>Måns Nilsson</h1>
                 </header>
                 <footer>
-                  <a href="https://www.linkedin.com/in/mansnilsson1/">linkedin</a>•
-                  <a href="https://twitter.com/the_mni">twitter</a>•
-                  <a href="https://github.com/mansn">github</a>
+                  <ul>
+                    <li>
+                      <a href="https://www.linkedin.com/in/mansnilsson1/">linkedin</a>•
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/the_mni">twitter</a>•
+                    </li>
+                    <li>
+                      <a href="https://github.com/mansn">github</a>
+                    </li>
+                  </ul>
                 </footer>
               </main>
             </animated.div>
