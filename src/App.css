@@ -7,10 +7,12 @@
 .App {
   text-align: center;
   padding: 40px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 footer ul {
-  margin: 0;
+  margin-top: 1rem;
   padding: 0;
 }
 
@@ -19,10 +21,62 @@ footer ul li {
   list-style-type: none;
 }
 
+footer ul a {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  height: 3rem;
+  width: 3rem;
+  margin-right: 2rem;
+  color: black;
+}
+
+ul li:last-child a {
+  margin-right: 0;
+}
+
+footer svg {
+  fill: rgba(0, 0, 0, 0.3);
+}
+
+footer a:hover svg {
+  fill: black;
+}
+
 .me-logo {
   height: 40vmin;
   pointer-events: none;
   border-radius: 50%;
+}
+
+section {
+  display: grid;
+  grid-gap: 1.5rem;
+  width: 20%;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  margin: 0 auto;
+}
+
+section button {
+  border: none;
+  padding: 1.5rem 1rem;
+  background-color: #bfbdba;
+  border-radius: 10px;
+  font-family: 'MontSerrat';
+  font-weight: bold;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition-timing-function: ease-in;
+  transition: 0.25s;
+  outline: none;
+}
+
+section button:hover {
+  color: #bfbdba;
+  background-color: black;
+  transition-timing-function: ease-in;
+  transition: 0.25s;
+  outline: none;
 }
 
 .App-header {
@@ -32,7 +86,7 @@ footer ul li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 1.5rem;
   color: #666;
 }
 
