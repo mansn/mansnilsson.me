@@ -29,8 +29,50 @@ function App() {
                       alt="månsnilsson"
                     />
                   </picture>
-                  <h1>Måns Nilsson</h1>
+                  <div className="name">
+                    <h1>Måns Nilsson</h1>
+                  </div>
                 </header>
+                <main>
+                  <preamble className="intro">
+                    Hi! I'm a web developer with an extensive QA background.
+                  </preamble>
+                  <h3>Background</h3>
+                  <p>
+                    Over the last 4-5 years I've accelerated my web development
+                    skills because I wanted to transition into a web developer
+                    role.
+                  </p>
+                  <p>
+                    I truly believe that the QA mindset is something that is
+                    part of e.g. a developer role. It's not something that
+                    someone else should take care of instead of you.
+                  </p>
+                  <p>
+                    I work as a consultant at{' '}
+                    <a href="https://www.diabol.se/">Diabol</a> today, mainly
+                    within test automation and QA coaching roles. <br/>I try to
+                    friendly promote ways of transition out of the QA safety-net
+                    approach, at the same time as I'm exiting it myself. =)
+                  </p>
+                  <h3>Portfolio</h3>
+                  <div className="portfolio">
+                    <a href="https://github.com/weaddquality/business-model-canvas">
+                      Business Model Canvas (React Web App)
+                    </a>
+                    <a href="https://github.com/weaddquality/bmc-aws-lambda-serverless">
+                      Business Model Canvas (Serverless backend)
+                    </a>
+                    <a href="https://workout.mansnilsson.me/">
+                      Workout App{' '}
+                      <span role="img" aria-label="Man Weightlifter">
+                        🏋️‍♂️ (React JAMStack App)
+                      </span>
+                    </a>
+                  </div>
+                  {/* </div> */}
+                </main>
+
                 <footer>
                   <ul>
                     <li>

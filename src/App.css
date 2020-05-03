@@ -1,16 +1,33 @@
-@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .App-header {
+    justify-content: center;
     min-height: 812px;
+  }
+
+  h1 {
+    justify-content: center;
+    font-size: 2rem;
   }
 }
 
 .App {
   text-align: center;
-  padding: 40px;
-  width: 80%;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
+footer {
+  margin-top: 3rem;
+}
 footer ul {
   margin-top: 1rem;
   padding: 0;
@@ -44,52 +61,60 @@ footer a:hover svg {
 }
 
 .me-logo {
+  grid-column: logo;
   height: 40vmin;
   pointer-events: none;
-  border-radius: 50%;
+  mask-image: radial-gradient(
+    rgba(0, 0, 0, 1) 65%,
+    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-section {
-  display: grid;
-  grid-gap: 1.5rem;
-  width: 20%;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  margin: 0 auto;
+.name {
+  background: white;
+  grid-column: name;
+  margin: auto;
 }
 
-section button {
-  border: none;
-  padding: 1.5rem 1rem;
-  background-color: #bfbdba;
-  border-radius: 10px;
-  font-family: 'MontSerrat';
-  font-weight: bold;
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition-timing-function: ease-in;
-  transition: 0.25s;
-  outline: none;
+main {
+  margin: 0 1rem;
 }
 
-section button:hover {
-  color: #bfbdba;
-  background-color: black;
-  transition-timing-function: ease-in;
-  transition: 0.25s;
-  outline: none;
+.intro {
+  font-size: 1.2rem;
+}
+
+.content {
+  background: rgb(245, 248, 250) none repeat scroll 0% 0%;
 }
 
 .App-header {
   background-color: white;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height: 20vh;
+  display: grid;
+  grid-template-columns: [logo] 1fr [name] 1fr;
   justify-content: center;
   font-size: 1.5rem;
-  color: #666;
+  color: black;
+  padding: 0 0 1.8rem 0;
 }
 
 .App-link {
   color: #666;
+}
+
+.portfolio {
+  align-items: center;
+  justify-items: center; /* adjusted */
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.portfolio a {
+  text-decoration: none;
+}
+
+.portfolio a:not(:first-child) {
+  margin-top: 1rem;
 }
