@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.12",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "@emotion/core": "10.0.10",
+    "@emotion/styled": "10.0.12",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-scripts": "3.0.1",
-    "react-spring": "^8.0.23"
+    "react-spring": "8.0.23"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,6 +38,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "1.19.1"
   }
 }
