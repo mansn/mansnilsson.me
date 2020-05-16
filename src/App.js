@@ -48,11 +48,16 @@ function App() {
                     part of e.g. a developer role. It's not something that
                     someone else should take care of instead of you.
                   </p>
+                  I think the{' '}
+                  <a href="https://www.angryweasel.com/ABTesting/modern-testing-principles/">
+                    Modern Testing Principles
+                  </a>{' '}
+                  are a great set of principles to assist you with this.
                   <p>
                     I work as a consultant at{' '}
                     <a href="https://www.diabol.se/">Diabol</a> today, mainly
-                    within test automation and QA coaching roles. <br/>I try to
-                    friendly promote ways of transition out of the QA safety-net
+                    within test automation and QA coaching roles. <br></br>I try
+                    to promote ways of transition out of the QA safety-net
                     approach, at the same time as I'm exiting it myself. =)
                   </p>
                   <h3>Portfolio</h3>
