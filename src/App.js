@@ -73,7 +73,7 @@ function App() {
                     <a href="https://github.com/weaddquality/bmc-aws-lambda-serverless">
                       Business Model Canvas (Serverless backend)
                     </a>
-                    <a href="https://workout.mansnilsson.me/">
+                    <a href="https://github.com/mansn/workout">
                       Workout App{' '}
                       <span role="img" aria-label="man weightlifter">
                         🏋️‍♂️ (React JAMStack App)
