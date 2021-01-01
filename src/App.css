@@ -13,6 +13,7 @@ html {
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .App-header {
     justify-content: center;
+    text-align: center;
     min-height: 812px;
   }
 
@@ -20,14 +21,23 @@ html {
     justify-content: center;
     font-size: 2rem;
   }
+
+  main,
+  footer {
+    padding: 1rem;
+  }
 }
 
 .App {
-  text-align: center;
   margin: 2rem auto;
 }
 
+p {
+}
+
 footer {
+  display: grid;
+  grid-template-columns: [copywright] 2fr [social] 1fr;
   margin-top: 3rem;
 }
 footer ul {
@@ -44,10 +54,18 @@ footer ul a {
   display: block;
   font-weight: bold;
   text-decoration: none;
-  height: 3rem;
-  width: 3rem;
-  margin-right: 2rem;
+  margin-left: 0.4rem;
   color: black;
+}
+
+footer .copywright {
+  grid-column: copywright;
+  opacity: 0.7;
+}
+
+footer .social {
+  grid-column: social;
+  text-align: end;
 }
 
 ul li:last-child a {
@@ -84,7 +102,8 @@ a {
 }
 
 main {
-  margin: 0 1rem;
+  margin: 0 auto;
+  max-width: 880px;
 }
 
 .intro {
@@ -102,6 +121,7 @@ main {
   justify-content: center;
   font-size: 1.5rem;
   padding: 0 0 1.8rem 0;
+  text-align: center;
 }
 
 .App-link {
@@ -109,8 +129,7 @@ main {
 }
 
 .portfolio {
-  align-items: center;
-  justify-items: center; /* adjusted */
+  justify-items: left;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -121,4 +140,8 @@ main {
 
 .portfolio a:not(:first-child) {
   margin-top: 1rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
 }

@@ -34,10 +34,17 @@ function App() {
                   </div>
                 </header>
                 <main>
-                  <preamble className="intro">
-                    Hi! I'm a web developer with an extensive QA background.
-                  </preamble>
-                  <h3>Background</h3>
+                  <p>
+                    Hello there{' '}
+                    <span role="img" aria-label="hand waving">
+                      👋
+                    </span>
+                  </p>
+                  <p>
+                    I'm a web developer with an extensive QA background. I work
+                    as a Cloud Developer at{' '}
+                    <a href="https://www.qred.com/">Qred AB</a>.
+                  </p>
                   <p>
                     Over the last 4-5 years I've accelerated my web development
                     skills because I wanted to transition into a web developer
@@ -48,15 +55,16 @@ function App() {
                     part of e.g. a developer role. It's not something that
                     someone else should take care of instead of you.
                   </p>
-                  I think the{' '}
-                  <a href="https://www.angryweasel.com/ABTesting/modern-testing-principles/">
-                    Modern Testing Principles
-                  </a>{' '}
-                  are a great set of principles to assist you with this.
-                  <p>
-                    I work as a Cloud Developer at{' '}
-                    <a href="https://www.qred.com/">Qred AB</a> today.
-                  </p>
+                  <div>
+                    <p>
+                      I think the{' '}
+                      <a href="https://www.angryweasel.com/ABTesting/modern-testing-principles/">
+                        Modern Testing Principles
+                      </a>{' '}
+                      are amazing, and highly recommend everyone to embrace
+                      them. 🙂
+                    </p>
+                  </div>
                   <h3>Portfolio</h3>
                   <div className="portfolio">
                     <a href="https://github.com/weaddquality/business-model-canvas">
@@ -67,15 +75,15 @@ function App() {
                     </a>
                     <a href="https://workout.mansnilsson.me/">
                       Workout App{' '}
-                      <span role="img" aria-label="Man Weightlifter">
+                      <span role="img" aria-label="man weightlifter">
                         🏋️‍♂️ (React JAMStack App)
                       </span>
                     </a>
                   </div>
                 </main>
-
                 <footer>
-                  <ul>
+                  <p className="copywright">Måns Nilsson © 2021</p>
+                  <ul className="social">
                     <li>
                       <a
                         className="linkedin"
@@ -83,6 +91,8 @@ function App() {
                       >
                         <svg
                           role="img"
+                          width="24"
+                          height="20"
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
@@ -95,6 +105,8 @@ function App() {
                       <a className="twitter" href="https://twitter.com/the_mni">
                         <svg
                           role="img"
+                          width="24"
+                          height="20"
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
@@ -107,6 +119,8 @@ function App() {
                       <a className="github" href="https://github.com/mansn">
                         <svg
                           role="img"
+                          width="24"
+                          height="20"
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
