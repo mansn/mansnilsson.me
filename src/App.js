@@ -54,11 +54,8 @@ function App() {
                   </a>{' '}
                   are a great set of principles to assist you with this.
                   <p>
-                    I work as a consultant at{' '}
-                    <a href="https://www.diabol.se/">Diabol</a> today, mainly
-                    within test automation and QA coaching roles. <br></br>I try
-                    to promote ways of transition out of the QA safety-net
-                    approach, at the same time as I'm exiting it myself. =)
+                    I work as a Cloud Developer at{' '}
+                    <a href="https://www.qred.com/">Qred AB</a> today.
                   </p>
                   <h3>Portfolio</h3>
                   <div className="portfolio">
@@ -75,7 +72,6 @@ function App() {
                       </span>
                     </a>
                   </div>
-                  {/* </div> */}
                 </main>
 
                 <footer>
