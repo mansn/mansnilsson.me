@@ -63,6 +63,7 @@ footer a:hover svg {
 }
 
 a {
+  text-decoration: none;
   color: rgb(255, 20, 147);
 }
 
