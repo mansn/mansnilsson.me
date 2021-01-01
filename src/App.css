@@ -87,7 +87,7 @@ a {
 
 .me-logo {
   grid-column: logo;
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
   mask-image: radial-gradient(
     rgba(0, 0, 0, 1) 65%,
