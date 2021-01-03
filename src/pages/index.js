@@ -13,6 +13,16 @@ const linkStyle = {
   color: "rgb(255, 20, 147)"
 }
 
+const footerStyles = {
+  display: "grid",
+  gridTemplateColumns: "[copywright] 2fr [social] 1fr",
+  marginTop: "3rem",
+}
+
+const listStyles = {
+  listStyleType: "none",
+}
+
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
@@ -76,10 +86,10 @@ const IndexPage = () => {
             </span>
           </a>
         </div>
-      <footer>
+      <footer style={footerStyles}>
         <p className="copywright">Måns Nilsson © 2021</p>
         <ul className="social">
-          <li>
+          <li style={listStyles}>
             <a style={linkStyle}
               className="linkedin"
               href="https://www.linkedin.com/in/mansnilsson1/"
@@ -96,7 +106,7 @@ const IndexPage = () => {
               </svg>
             </a>
           </li>
-          <li>
+          <li style={listStyles}>
             <a style={linkStyle} className="twitter" href="https://twitter.com/the_mni">
               <svg
                 role="img"
@@ -110,7 +120,7 @@ const IndexPage = () => {
               </svg>
             </a>
           </li>
-          <li>
+          <li style={listStyles}>
             <a style={linkStyle} className="github" href="https://github.com/mansn">
               <svg
                 role="img"
