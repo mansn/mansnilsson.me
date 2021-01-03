@@ -1,5 +1,6 @@
 # vscode
 .vscode
+public/
 
 # dependencies
 /node_modules
