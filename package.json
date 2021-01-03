@@ -11,11 +11,7 @@
     "build": "gatsby build",
     "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "node scripts/test.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "serve": "gatsby serve"
   },
   "prettier": {
     "trailingComma": "es5",
