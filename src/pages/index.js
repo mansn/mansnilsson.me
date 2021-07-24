@@ -1,4 +1,7 @@
 import * as React from "react"
+import logo from '../images/me.webp'
+import logoFallback from '../images/me.jpg'
+import styled from 'styled-components'
 
 const pageStyles = {
   background: "#041122",
@@ -23,19 +26,32 @@ const listStyles = {
   listStyleType: "none",
 }
 
+const Logo = ({className}) => {
+  return (
+    <picture>
+      <source type="image/webp" srcSet={logo} />
+      <img
+        src={logoFallback}
+        className={className}
+        alt="månsnilsson"
+      />
+    </picture>
+  )
+}
+
+const StyledLogo = styled(Logo)`
+  grid-column: logo;
+  height: 30vmin;
+  pointer-events: none;
+  mask-image: radial-gradient(rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%)
+`
+
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
       <title>mansnilsson.me</title>
       <header className="App-header">
-        <picture>
-          <source type="image/webp" srcSet="/images/me.webp" />
-          <img
-            src="/images/me.jpg"
-            className="me-logo"
-            alt="månsnilsson"
-          />
-        </picture>
+       <StyledLogo />
         <div className="name">
           <h1>Måns Nilsson</h1>
         </div>
