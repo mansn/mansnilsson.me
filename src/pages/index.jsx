@@ -63,19 +63,8 @@ const IndexPage = () => {
           </span>
         </p>
         <p>
-          I'm a web developer with an extensive QA background. I work
-          as a Cloud Developer at{' '}
-          <a style={linkStyle} href="https://www.qred.com/">Qred AB</a>.
-        </p>
-        <p>
-          Over the last 4-5 years I've accelerated my web development
-          skills because I wanted to transition into a web developer
-          role.
-        </p>
-        <p>
-          I truly believe that the QA mindset is something that is
-          part of e.g. a developer role. It's not something that
-          someone else should take care of instead of you.
+        I'm a Fullstack Developer within the JavaScript stack. I work at{' '}
+        <a style={linkStyle} href="https://www.qred.com/">Qred AB</a>.
         </p>
         <div>
           <p>
