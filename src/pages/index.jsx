@@ -27,23 +27,28 @@ const StyledLogo = styled(Logo)`
   mask-image: radial-gradient(rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
 `;
 
+const StyledName = styled.div`
+  grid-column: name;
+  margin: auto;
+`;
+
 const Me = ({ className }) => {
   return (
     <div className={className}>
       <StyledLogo />
-      <div className="name">
+      <StyledName>
         <h1>Måns Nilsson</h1>
-      </div>
+      </StyledName>
     </div>
   );
 };
 
-const Portfolio = ({ className }) => {
-  const StyledList = styled.div`
-    display: flex;
-    flex-direction: column;
-  `;
+const StyledList = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
+const Portfolio = ({ className }) => {
   return (
     <div className={className}>
       <h3>Portfolio</h3>
@@ -88,7 +93,10 @@ const Intro = ({ className }) => {
       </p>
       <p>
         I also provide a list of personal projects at the bottom of the page for anyone that&apos;s
-        interested 🙂
+        interested{" "}
+        <span role="img" aria-label="slightly smiling face">
+          🙂
+        </span>
       </p>
       <p>
         I think the{" "}
@@ -98,7 +106,10 @@ const Intro = ({ className }) => {
         >
           Modern Testing Principles
         </a>{" "}
-        are amazing, and highly recommend everyone to embrace them. 🙂
+        are amazing, and highly recommend everyone to embrace them.{" "}
+        <span role="img" aria-label="slightly smiling face">
+          🙂
+        </span>
       </p>
     </div>
   );
@@ -109,6 +120,10 @@ const StyledIntro = styled(Intro)`
 `;
 
 const StyledMe = styled(Me)`
+  display: grid;
+  grid-template-columns: [logo] 0.5fr [name] 1fr;
+  justify-content: center;
+  text-align: center;
   grid-column: 2;
 `;
 

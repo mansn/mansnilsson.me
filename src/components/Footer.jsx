@@ -6,24 +6,35 @@ const linkStyle = {
   color: "rgb(255, 20, 147)"
 };
 
-const footerStyles = {
-  width: "100%",
-  gridColumn: "1 / 4",
-  display: "grid",
-  gridTemplateColumns: "[copywright] 2fr [social] 1fr",
-  marginTop: "3rem"
+const socialStyle = {
+  gridColumn: "social",
+  display: "flex",
+  columnGap: "0.8em"
 };
 
-const listStyles = {
+const copywrightStyle = {
+  gridColumn: "copywright",
+  opacity: 0.6
+};
+
+const footerStyles = {
+  gridColumn: "1 / 4",
+  display: "grid",
+  gridTemplateColumns: "[copywright] 1fr [social]",
+  margin: "0 10em",
+  marginTop: "3em"
+};
+
+const listItemStyles = {
   listStyleType: "none"
 };
 
 const Footer = () => {
   return (
     <footer style={footerStyles}>
-      <p className="copywright">Måns Nilsson © 2021</p>
-      <ul className="social">
-        <li style={listStyles}>
+      <p style={copywrightStyle}>Måns Nilsson © 2021</p>
+      <ul style={socialStyle}>
+        <li style={listItemStyles}>
           <a
             style={linkStyle}
             className="linkedin"
@@ -41,7 +52,7 @@ const Footer = () => {
             </svg>
           </a>
         </li>
-        <li style={listStyles}>
+        <li style={listItemStyles}>
           <a style={linkStyle} className="twitter" href="https://twitter.com/the_mni">
             <svg
               role="img"
@@ -55,7 +66,7 @@ const Footer = () => {
             </svg>
           </a>
         </li>
-        <li style={listStyles}>
+        <li style={listItemStyles}>
           <a style={linkStyle} className="github" href="https://github.com/mansn">
             <svg
               role="img"
