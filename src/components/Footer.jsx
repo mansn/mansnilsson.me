@@ -1,46 +1,31 @@
-import React from 'react'
-import Paragraph from './Paragraph'
+import React from "react";
 
 const linkStyle = {
   textDecoration: "none",
   fontWeight: "bold",
   color: "rgb(255, 20, 147)"
-}
+};
 
 const footerStyles = {
-  width: '100%',
-  gridColumn: '1 / 4',
+  width: "100%",
+  gridColumn: "1 / 4",
   display: "grid",
   gridTemplateColumns: "[copywright] 2fr [social] 1fr",
-  marginTop: "3rem",
-}
+  marginTop: "3rem"
+};
 
 const listStyles = {
-  listStyleType: "none",
-}
+  listStyleType: "none"
+};
 
 const Footer = () => {
   return (
     <footer style={footerStyles}>
-      <h3>Portfolio</h3>
-      <div className="portfolio">
-        <a style={linkStyle} href="https://github.com/weaddquality/business-model-canvas">
-          Business Model Canvas (React Web App)
-        </a>
-        <a style={linkStyle} href="https://github.com/weaddquality/bmc-aws-lambda-serverless">
-          Business Model Canvas (Serverless backend)
-        </a>
-        <a style={linkStyle} href="https://github.com/mansn/workout">
-          Workout App{' '}
-          <span role="img" aria-label="man weightlifter">
-            🏋️‍♂️ (React JAMStack App)
-          </span>
-        </a>
-      </div>
-      <Paragraph className="copywright">Måns Nilsson © 2021</Paragraph>
+      <p className="copywright">Måns Nilsson © 2021</p>
       <ul className="social">
         <li style={listStyles}>
-          <a style={linkStyle}
+          <a
+            style={linkStyle}
             className="linkedin"
             href="https://www.linkedin.com/in/mansnilsson1/"
           >
@@ -86,7 +71,7 @@ const Footer = () => {
         </li>
       </ul>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
