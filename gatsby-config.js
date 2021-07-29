@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'mansnilsson.me',
+    author: 'Måns Nilsson',
+    siteUrl: 'https://mansnilsson.me'
   },
   plugins: [
     'gatsby-plugin-styled-components',
