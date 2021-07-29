@@ -121,7 +121,7 @@ const StyledIntro = styled(Intro)`
 
 const StyledMe = styled(Me)`
   display: grid;
-  grid-template-columns: [logo] 0.5fr [name] 1fr;
+  grid-template-columns: [logo] 1fr [name] 1fr;
   justify-content: center;
   text-align: center;
   grid-column: 2;
