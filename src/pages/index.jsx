@@ -77,9 +77,9 @@ const Intro = ({ className }) => {
         .
       </p>
       <p>
-        This is my personal site where I share and process thoughts I have on my mind, mostly
-        related my experiences in software development, the world of work and my personal
-        development.
+        This is my personal site where experiment for learning purposes, but I also plan to share
+        knowledge and various thoughts/ideas, mostly related to software development, the world of
+        work and my personal development.
       </p>
       <p>
         I also provide a list of personal projects at the bottom of the page for anyone that&apos;s
