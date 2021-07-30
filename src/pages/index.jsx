@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Layout } from "../components";
-import logo from "../images/me.webp";
-import logoFallback from "../images/me.jpg";
+import Logo from "../components/Logo";
 import styled from "styled-components";
 
 const linkStyle = {
@@ -9,15 +8,6 @@ const linkStyle = {
   textDecoration: "none",
   fontWeight: "bold",
   color: "rgb(255, 20, 147)"
-};
-
-const Logo = ({ className }) => {
-  return (
-    <picture>
-      <source type="image/webp" srcSet={logo} />
-      <img src={logoFallback} className={className} alt="månsnilsson" />
-    </picture>
-  );
 };
 
 const StyledLogo = styled(Logo)`
