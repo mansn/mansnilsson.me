@@ -41,11 +41,13 @@ const StyledMain = styled.main`
 
 const Layout = ({ children }) => {
   return (
-    <StyledMain>
-      <GlobalStyle />
-      {children}
+    <>
+      <StyledMain>
+        <GlobalStyle />
+        {children}
+      </StyledMain>
       <Footer />
-    </StyledMain>
+    </>
   );
 };
 

@@ -1,23 +1,13 @@
 import * as React from "react";
 import { Layout } from "../components";
-import logo from "../images/me.webp";
-import logoFallback from "../images/me.jpg";
+import Logo from "../components/Logo";
 import styled from "styled-components";
 
 const linkStyle = {
   marginTop: "1em",
   textDecoration: "none",
   fontWeight: "bold",
-  color: "rgb(255, 20, 147)"
-};
-
-const Logo = ({ className }) => {
-  return (
-    <picture>
-      <source type="image/webp" srcSet={logo} />
-      <img src={logoFallback} className={className} alt="månsnilsson" />
-    </picture>
-  );
+  color: "hsl(327deg 100% 70%)"
 };
 
 const StyledLogo = styled(Logo)`
@@ -87,9 +77,9 @@ const Intro = ({ className }) => {
         .
       </p>
       <p>
-        This is my personal site where I share and process thoughts I have on my mind, mostly
-        related my experiences in software development, the world of work and my personal
-        development.
+        This is my personal site where experiment for learning purposes, but I also plan to share
+        knowledge and various thoughts/ideas, mostly related to software development, the world of
+        work and my personal development.
       </p>
       <p>
         I also provide a list of personal projects at the bottom of the page for anyone that&apos;s

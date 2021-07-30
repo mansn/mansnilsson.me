@@ -1,9 +1,10 @@
 import React from "react";
+import styled from "styled-components";
 
 const linkStyle = {
   textDecoration: "none",
   fontWeight: "bold",
-  color: "rgb(255, 20, 147)"
+  color: "hsl(327deg 100% 70%)"
 };
 
 const socialStyle = {
@@ -17,13 +18,13 @@ const copywrightStyle = {
   opacity: 0.6
 };
 
-const footerStyles = {
-  gridColumn: "1 / 4",
-  display: "grid",
-  gridTemplateColumns: "[copywright] 1fr [social]",
-  margin: "0 10em",
-  marginTop: "3em"
-};
+const StyledFooter = styled.footer`
+  max-width: 875px;
+  margin: 0 auto;
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: [copywright] 1fr [social];
+`;
 
 const listItemStyles = {
   listStyleType: "none"
@@ -31,7 +32,7 @@ const listItemStyles = {
 
 const Footer = () => {
   return (
-    <footer style={footerStyles}>
+    <StyledFooter>
       <p style={copywrightStyle}>Måns Nilsson © 2021</p>
       <ul style={socialStyle}>
         <li style={listItemStyles}>
@@ -81,7 +82,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-    </footer>
+    </StyledFooter>
   );
 };
 

@@ -1,44 +1,45 @@
 module.exports = {
   siteMetadata: {
-    title: 'mansnilsson.me',
-    author: 'Måns Nilsson',
-    siteUrl: 'https://mansnilsson.me'
+    title: "mansnilsson.me",
+    author: "Måns Nilsson",
+    siteUrl: "https://mansnilsson.me"
   },
   plugins: [
-    'gatsby-plugin-styled-components',
+    "gatsby-plugin-styled-components",
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: 'UA-169685413-1',
-      },
+        trackingId: "UA-169685413-1"
+      }
     },
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-offline',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-offline",
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        icon: 'src/images/icon.png',
-      },
+        icon: "src/images/favicon.png"
+      }
     },
-    'gatsby-plugin-mdx',
-    'gatsby-transformer-sharp',
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-image",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
-        path: './src/images/',
+        name: "images",
+        path: `${__dirname}/src/images`
       },
-      __key: 'images',
+      __key: "images"
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'pages',
-        path: './src/pages/',
+        name: "pages",
+        path: "./src/pages/"
       },
-      __key: 'pages',
-    },
-  ],
-}
+      __key: "pages"
+    }
+  ]
+};
