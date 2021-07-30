@@ -4,7 +4,7 @@ import styled from "styled-components";
 const linkStyle = {
   textDecoration: "none",
   fontWeight: "bold",
-  color: "rgb(255, 20, 147)"
+  color: "hsl(327deg 100% 70%)"
 };
 
 const socialStyle = {

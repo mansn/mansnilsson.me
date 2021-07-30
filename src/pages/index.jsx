@@ -7,7 +7,7 @@ const linkStyle = {
   marginTop: "1em",
   textDecoration: "none",
   fontWeight: "bold",
-  color: "rgb(255, 20, 147)"
+  color: "hsl(327deg 100% 70%)"
 };
 
 const StyledLogo = styled(Logo)`
