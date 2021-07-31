@@ -14,7 +14,6 @@ const StyledLogo = styled(Logo)`
   grid-column: logo;
   height: 30vmin;
   pointer-events: none;
-  mask-image: radial-gradient(rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
 `;
 
 const StyledName = styled.div`
