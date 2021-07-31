@@ -80,11 +80,11 @@ const Intro = ({ className }) => {
         <a style={linkStyle} href="https://joelhooks.com/digital-garden">
           digital garden
         </a>{" "}
-        to share knowledge,{" "}
+        and share knowledge by{" "}
         <a style={linkStyle} href="https://twitter.com/swyx/status/1009174159690264579">
-          learn in public
-        </a>{" "}
-        and do various experiments.
+          learning in public
+        </a>
+        .
       </p>
       <p>
         I also provide a list of personal projects at the bottom of the page for anyone that&apos;s
