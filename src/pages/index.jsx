@@ -69,7 +69,7 @@ const Intro = ({ className }) => {
         </span>
       </p>
       <p>
-        I&apos;m a Fullstack Developer within the JavaScript stack. I work at{" "}
+        I&apos;m a Fullstack Developer within JavaScript. I work at{" "}
         <a style={linkStyle} href="https://www.qred.com/">
           Qred AB
         </a>
