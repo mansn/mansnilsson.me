@@ -15,13 +15,13 @@ const socialStyle = {
 
 const copywrightStyle = {
   gridColumn: "copywright",
-  opacity: 0.6
+  opacity: 0.35
 };
 
 const StyledFooter = styled.footer`
-  max-width: 875px;
+  max-width: 65ch;
   margin: 0 auto;
-  margin-top: 2em;
+  margin-top: 3em;
   display: grid;
   grid-template-columns: [copywright] 1fr [social];
 `;
