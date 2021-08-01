@@ -76,7 +76,7 @@ const Intro = ({ className }) => {
         .
       </p>
       <p>
-        This is my personal site where I soon™️ will add my{" "}
+        This is my personal site where I'll soon™️ start working on my{" "}
         <a style={linkStyle} href="https://joelhooks.com/digital-garden">
           digital garden
         </a>{" "}
