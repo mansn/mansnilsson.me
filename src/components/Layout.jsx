@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../css/typography.css";
 
@@ -23,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
     fill: rgba(255, 20, 147, 0.8);
   }
 
+  a {
+    transition: all 0.3s ease-in-out 0s;
+  }
+
   @media (max-width: 767px) {
     body {
       padding: 20px;
@@ -42,10 +47,9 @@ const StyledMain = styled.main`
 const Layout = ({ children }) => {
   return (
     <>
-      <StyledMain>
-        <GlobalStyle />
-        {children}
-      </StyledMain>
+      <GlobalStyle />
+      <Header />
+      <StyledMain>{children}</StyledMain>
       <Footer />
     </>
   );
