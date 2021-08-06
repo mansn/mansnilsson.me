@@ -1,4 +1,2 @@
-import Layout from "./Layout";
-import Footer from "./Footer";
-
-export { Layout, Footer };
+export { default as Burger } from "./Burger";
+export { default as Menu } from "./Menu";

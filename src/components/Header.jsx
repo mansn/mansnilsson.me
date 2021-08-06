@@ -1,13 +1,8 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-
-const Home = styled.div`
-  border-radius: 3px;
-  border: none;
-  color: palevioletred;
-  grid-column: home;
-`;
+import { Burger, Menu } from "../components";
+import { useOnClickOutside } from "../hooks";
 
 const Nav = styled.nav`
   display: flex;
@@ -37,20 +32,30 @@ const Links = styled.div`
   align-items: center;
 `;
 
-const Header = ({ className }) => (
-  <header className={className}>
-    <Nav>
-      <StyledHomeLink to="/">
-        <span>Måns Nilsson</span>
-      </StyledHomeLink>
-      <Links>
-        <StyledLink to="/">Digital Garden</StyledLink>
-        <StyledLink to="/">Portfolio</StyledLink>
-        <StyledLink to="/">About</StyledLink>
-      </Links>
-    </Nav>
-  </header>
-);
+const Header = ({ className }) => {
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  useOnClickOutside(node, () => setOpen(false));
+
+  return (
+    <header className={className}>
+      <Nav>
+        <div ref={node}>
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </div>
+        <StyledHomeLink to="/">
+          <span>Måns Nilsson</span>
+        </StyledHomeLink>
+        <Links>
+          <StyledLink to="/">Digital Garden</StyledLink>
+          <StyledLink to="/">Portfolio</StyledLink>
+          <StyledLink to="/">About</StyledLink>
+        </Links>
+      </Nav>
+    </header>
+  );
+};
 
 const StyledHeader = styled(Header)`
   width: 100%;

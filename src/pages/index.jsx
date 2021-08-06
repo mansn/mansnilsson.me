@@ -1,7 +1,8 @@
-import * as React from "react";
-import { Layout } from "../components";
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
+import Layout from "../components/Layout";
 import Logo from "../components/Logo";
-import styled from "styled-components";
+import { theme } from "../theme";
 
 const linkStyle = {
   marginTop: "1em",
@@ -128,12 +129,14 @@ const StyledPortfolio = styled(Portfolio)`
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <title>mansnilsson.me</title>
-      <StyledMe />
-      <StyledIntro />
-      <StyledPortfolio />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <title>mansnilsson.me</title>
+        <StyledMe />
+        <StyledIntro />
+        <StyledPortfolio />
+      </Layout>
+    </ThemeProvider>
   );
 };
 
