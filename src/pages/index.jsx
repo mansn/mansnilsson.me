@@ -1,7 +1,8 @@
-import * as React from "react";
-import { Layout } from "../components";
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
+import Layout from "../components/Layout";
 import Logo from "../components/Logo";
-import styled from "styled-components";
+import { theme } from "../theme";
 
 const linkStyle = {
   marginTop: "1em",
@@ -18,7 +19,11 @@ const StyledLogo = styled(Logo)`
 
 const StyledName = styled.div`
   grid-column: name;
+  font-weight: 100;
   margin: auto;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    font-size: 0.75em;
+  }
 `;
 
 const Me = ({ className }) => {
@@ -120,6 +125,7 @@ const StyledMe = styled(Me)`
   justify-content: center;
   text-align: center;
   grid-column: 2;
+  z-index: -1;
 `;
 
 const StyledPortfolio = styled(Portfolio)`
@@ -128,12 +134,14 @@ const StyledPortfolio = styled(Portfolio)`
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <title>mansnilsson.me</title>
-      <StyledMe />
-      <StyledIntro />
-      <StyledPortfolio />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <title>mansnilsson.me</title>
+        <StyledMe />
+        <StyledIntro />
+        <StyledPortfolio />
+      </Layout>
+    </ThemeProvider>
   );
 };
 
