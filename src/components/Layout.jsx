@@ -34,10 +34,6 @@ const GlobalStyle = createGlobalStyle`
     body {
       padding: 20px;
     }
-    
-    h1 {
-      font-size: 1.40em
-    }
   }
 `;
 

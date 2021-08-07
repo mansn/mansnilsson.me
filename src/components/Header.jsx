@@ -21,7 +21,7 @@ const StyledHomeLink = styled(Link)`
   display: flex;
   text-decoration: none;
   color: hsl(0deg 0% 100%);
-  font-size: 1.1em;
+  font-weight: 900;
 `;
 
 const StyledLink = styled(Link)`
