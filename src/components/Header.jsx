@@ -11,10 +11,17 @@ const Nav = styled.nav`
   justify-content: space-between;
 `;
 
+const LinksMobile = styled.div`
+  @media (min-width: ${({ theme }) => theme.mobile}) {
+    display: none;
+  }
+`;
+
 const StyledHomeLink = styled(Link)`
   display: flex;
   text-decoration: none;
   color: hsl(0deg 0% 100%);
+  font-size: 1.1em;
 `;
 
 const StyledLink = styled(Link)`
@@ -27,31 +34,34 @@ const StyledLink = styled(Link)`
   border-radius: 8px;
 `;
 
-const Links = styled.div`
+const LinksDesktop = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: none;
+  }
 `;
 
 const Header = ({ className }) => {
-  const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const node = useRef();
-  useOnClickOutside(node, () => setOpen(false));
+  useOnClickOutside(node, () => setMenuOpen(false));
 
   return (
     <header className={className}>
       <Nav>
-        <div ref={node}>
-          <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} setOpen={setOpen} />
-        </div>
         <StyledHomeLink to="/">
           <span>Måns Nilsson</span>
         </StyledHomeLink>
-        <Links>
+        <LinksMobile ref={node}>
+          <Burger open={menuOpen} setOpen={setMenuOpen} />
+          <Menu open={menuOpen} setOpen={setMenuOpen} />
+        </LinksMobile>
+        <LinksDesktop>
           <StyledLink to="/">Digital Garden</StyledLink>
           <StyledLink to="/">Portfolio</StyledLink>
           <StyledLink to="/">About</StyledLink>
-        </Links>
+        </LinksDesktop>
       </Nav>
     </header>
   );
@@ -61,7 +71,7 @@ const StyledHeader = styled(Header)`
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 `;
 
 export default StyledHeader;

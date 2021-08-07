@@ -121,6 +121,7 @@ const StyledMe = styled(Me)`
   justify-content: center;
   text-align: center;
   grid-column: 2;
+  z-index: -1;
 `;
 
 const StyledPortfolio = styled(Portfolio)`

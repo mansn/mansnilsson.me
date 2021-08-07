@@ -5,18 +5,17 @@ import { StyledMenu } from "./Menu.styled";
 
 const StyledLink = styled(Link)`
   padding: 0 20px;
-  text-decoration: none;
   color: hsl(327deg 100% 70%);
   &:hover {
     color: hsl(0deg 0% 100%);
   }
-  border-radius: 8px;
 `;
 
 const Links = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 
 const Menu = ({ open }) => {
