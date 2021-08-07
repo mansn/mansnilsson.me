@@ -19,7 +19,6 @@ const StyledLogo = styled(Logo)`
 
 const StyledName = styled.div`
   grid-column: name;
-  font-size: 1.4em;
   font-weight: 100;
   margin: auto;
   @media (max-width: ${({ theme }) => theme.mobile}) {
