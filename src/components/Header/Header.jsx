@@ -1,8 +1,10 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { Burger, Menu } from "../components";
-import { useOnClickOutside } from "../hooks";
+import Burger from "../Burger";
+import Menu from "../Menu";
+import { StyledHeader } from "./Header.styled";
+import { useOnClickOutside } from "../../hooks";
 
 const Nav = styled.nav`
   display: flex;
@@ -42,13 +44,13 @@ const LinksDesktop = styled.div`
   }
 `;
 
-const Header = ({ className }) => {
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setMenuOpen(false));
 
   return (
-    <header className={className}>
+    <StyledHeader>
       <Nav>
         <StyledHomeLink to="/">
           <span>Måns Nilsson</span>
@@ -63,15 +65,8 @@ const Header = ({ className }) => {
           <StyledLink to="/">About</StyledLink>
         </LinksDesktop>
       </Nav>
-    </header>
+    </StyledHeader>
   );
 };
 
-const StyledHeader = styled(Header)`
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 3em;
-`;
-
-export default StyledHeader;
+export default Header;

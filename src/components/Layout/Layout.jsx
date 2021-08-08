@@ -1,15 +1,14 @@
 import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import "../css/typography.css";
+import { createGlobalStyle } from "styled-components";
+import Header from "../Header";
+import Footer from "../Footer";
+import { StyledMain } from "./Layout.styled";
+import "../../css/typography.css";
 
 const GlobalStyle = createGlobalStyle`
   body {
     box-sizing: border-box;
     margin: 0 auto;
-    /* background: #041122;
-    color: white; */
     background: ${({ theme }) => theme.primaryDark};
     color: ${({ theme }) => theme.primaryLight};
     padding: 40px;
@@ -35,11 +34,6 @@ const GlobalStyle = createGlobalStyle`
       padding: 20px;
     }
   }
-`;
-
-const StyledMain = styled.main`
-  display: grid;
-  grid-template-columns: 1fr min(65ch, 100%) 1fr;
 `;
 
 const Layout = ({ children }) => {
