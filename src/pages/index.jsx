@@ -4,17 +4,11 @@ import Layout from "../components/Layout";
 import Logo from "../components/Logo";
 import { theme } from "../theme";
 
-const linkStyle = {
-  marginTop: "1em",
-  textDecoration: "none",
-  fontWeight: "bold",
-  color: "hsl(327deg 100% 70%)"
-};
-
-const StyledLogo = styled(Logo)`
-  grid-column: logo;
-  height: 30vmin;
-  pointer-events: none;
+const StyledExternalLink = styled.a`
+  margin-top: 1em;
+  text-decoration: none;
+  font-weight: bold;
+  color: hsl(327deg 100% 70%);
 `;
 
 const StyledName = styled.div`
@@ -26,47 +20,64 @@ const StyledName = styled.div`
   }
 `;
 
-const Me = ({ className }) => {
+const StyledMe = styled.div`
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  justify-content: center;
+  text-align: center;
+  grid-column: 2;
+  z-index: -1;
+`;
+
+const Me = () => {
   return (
-    <div className={className}>
-      <StyledLogo />
+    <StyledMe>
+      <Logo />
       <StyledName>
         <h1>Måns Nilsson</h1>
       </StyledName>
-    </div>
+    </StyledMe>
   );
 };
 
-const StyledList = styled.div`
+const List = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Portfolio = ({ className }) => {
+const StyledPortfolio = styled.div`
+  grid-column: 2;
+`;
+
+const Portfolio = () => {
   return (
-    <div className={className}>
+    <StyledPortfolio>
       <h3>Portfolio</h3>
-      <StyledList className="portfolio">
-        <a style={linkStyle} href="https://github.com/weaddquality/business-model-canvas">
+      <List className="portfolio">
+        <StyledExternalLink href="https://github.com/weaddquality/business-model-canvas">
           Business Model Canvas (React Web App)
-        </a>
-        <a style={linkStyle} href="https://github.com/weaddquality/bmc-aws-lambda-serverless">
+        </StyledExternalLink>
+        <StyledExternalLink href="https://github.com/weaddquality/bmc-aws-lambda-serverless">
           Business Model Canvas (Serverless backend)
-        </a>
-        <a style={linkStyle} href="https://github.com/mansn/workout">
+        </StyledExternalLink>
+        <StyledExternalLink href="https://github.com/mansn/workout">
           Workout App{" "}
           <span role="img" aria-label="man weightlifter">
             🏋️‍♂️ (React JAMStack App)
           </span>
-        </a>
-      </StyledList>
-    </div>
+        </StyledExternalLink>
+      </List>
+    </StyledPortfolio>
   );
 };
 
-const Intro = ({ className }) => {
+const StyledIntro = styled.div`
+  grid-column: 2;
+`;
+
+const Intro = () => {
   return (
-    <div className={className}>
+    <StyledIntro>
       <p>
         Hello there{" "}
         <span role="img" aria-label="hand waving">
@@ -75,20 +86,17 @@ const Intro = ({ className }) => {
       </p>
       <p>
         I&apos;m a Fullstack Developer within JavaScript. I work at{" "}
-        <a style={linkStyle} href="https://www.qred.com/">
-          Qred AB
-        </a>
-        .
+        <StyledExternalLink href="https://www.qred.com/">Qred AB</StyledExternalLink>.
       </p>
       <p>
         This is my personal site where I'll soon™️ start working on my{" "}
-        <a style={linkStyle} href="https://joelhooks.com/digital-garden">
+        <StyledExternalLink href="https://joelhooks.com/digital-garden">
           digital garden
-        </a>{" "}
+        </StyledExternalLink>{" "}
         and share knowledge by{" "}
-        <a style={linkStyle} href="https://twitter.com/swyx/status/1009174159690264579">
+        <StyledExternalLink href="https://twitter.com/swyx/status/1009174159690264579">
           learning in public
-        </a>
+        </StyledExternalLink>
         .
       </p>
       <p>
@@ -100,46 +108,26 @@ const Intro = ({ className }) => {
       </p>
       <p>
         Oh, btw: I think the{" "}
-        <a
-          style={linkStyle}
-          href="https://www.angryweasel.com/ABTesting/modern-testing-principles/"
-        >
+        <StyledExternalLink href="https://www.angryweasel.com/ABTesting/modern-testing-principles/">
           Modern Testing Principles
-        </a>{" "}
+        </StyledExternalLink>{" "}
         are amazing, and highly recommend everyone to embrace them.{" "}
         <span role="img" aria-label="slightly smiling face">
           🙂
         </span>
       </p>
-    </div>
+    </StyledIntro>
   );
 };
-
-const StyledIntro = styled(Intro)`
-  grid-column: 2;
-`;
-
-const StyledMe = styled(Me)`
-  display: grid;
-  grid-template-columns: [logo] 1fr [name] 1fr;
-  justify-content: center;
-  text-align: center;
-  grid-column: 2;
-  z-index: -1;
-`;
-
-const StyledPortfolio = styled(Portfolio)`
-  grid-column: 2;
-`;
 
 const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <title>mansnilsson.me</title>
-        <StyledMe />
-        <StyledIntro />
-        <StyledPortfolio />
+        <Me />
+        <Intro />
+        <Portfolio />
       </Layout>
     </ThemeProvider>
   );
