@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { StyledFooter } from "./Footer.styled";
 
 const linkStyle = {
   textDecoration: "none",
@@ -17,14 +17,6 @@ const copywrightStyle = {
   gridColumn: "copywright",
   opacity: 0.35
 };
-
-const StyledFooter = styled.footer`
-  max-width: 800px;
-  margin: 0 auto;
-  margin-top: 3em;
-  display: grid;
-  grid-template-columns: [copywright] 1fr [social];
-`;
 
 const listItemStyles = {
   listStyleType: "none"

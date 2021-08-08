@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
-export default function Logo() {
+const Logo = () => {
   return (
     <StaticImage
       width={500}
@@ -10,4 +10,6 @@ export default function Logo() {
       alt="An image of Måns Nilsson"
     />
   );
-}
+};
+
+export default Logo;
