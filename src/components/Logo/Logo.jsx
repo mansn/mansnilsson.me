@@ -6,7 +6,7 @@ const Logo = () => {
     <StaticImage
       width={500}
       placeholder="tracedSVG"
-      src="../images/me.png"
+      src="../../images/me.png"
       alt="An image of Måns Nilsson"
     />
   );

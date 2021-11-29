@@ -21,7 +21,6 @@ module.exports = {
         icon: "src/images/favicon.png"
       }
     },
-    "gatsby-plugin-mdx",
     "gatsby-plugin-image",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
@@ -40,6 +39,15 @@ module.exports = {
         path: "./src/pages/"
       },
       __key: "pages"
-    }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "content",
+        path: './content',
+      },
+    },
+    "gatsby-transformer-remark",
+    "gatsby-plugin-mdx",
   ]
 };
