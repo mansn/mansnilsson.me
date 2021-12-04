@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledFooter = styled.footer`
   max-width: 800px;
@@ -6,4 +6,4 @@ export const StyledFooter = styled.footer`
   margin-top: 3em;
   display: grid;
   grid-template-columns: [copywright] 1fr [social];
-`;
+`

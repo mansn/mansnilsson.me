@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
-import { StyledMenu } from "./Menu.styled";
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'gatsby'
+import { StyledMenu } from './Menu.styled'
 
 const StyledLink = styled(Link)`
   padding: 0 20px;
@@ -9,14 +9,14 @@ const StyledLink = styled(Link)`
   &:hover {
     color: hsl(0deg 0% 100%);
   }
-`;
+`
 
 const Links = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-`;
+`
 
 const Menu = ({ open }) => {
   return (
@@ -27,6 +27,6 @@ const Menu = ({ open }) => {
         <StyledLink to="/">About</StyledLink>
       </Links>
     </StyledMenu>
-  );
-};
-export default Menu;
+  )
+}
+export default Menu

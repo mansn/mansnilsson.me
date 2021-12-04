@@ -1,9 +1,9 @@
-import React from "react";
-import { createGlobalStyle } from "styled-components";
-import Header from "../Header";
-import Footer from "../Footer";
-import { StyledMain } from "./Layout.styled";
-import "../../styles/typography.css";
+import React from 'react'
+import { createGlobalStyle } from 'styled-components'
+import Header from '../Header'
+import Footer from '../Footer'
+import { StyledMain } from './Layout.styled'
+import '../../styles/typography.css'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 20px;
     }
   }
-`;
+`
 
 const Layout = ({ children }) => {
   return (
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
       <StyledMain>{children}</StyledMain>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

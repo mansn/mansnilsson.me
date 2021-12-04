@@ -1,5 +1,5 @@
-import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import * as React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Logo = () => {
   return (
@@ -9,7 +9,7 @@ const Logo = () => {
       src="../../images/me.png"
       alt="An image of Måns Nilsson"
     />
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo
