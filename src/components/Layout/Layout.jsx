@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import Header from "../Header";
 import Footer from "../Footer";
 import { StyledMain } from "./Layout.styled";
-import "../../css/typography.css";
+import "../../styles/typography.css";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -27,6 +27,10 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     transition: all 0.3s ease-in-out 0s;
+    margin-top: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    color: hsl(327deg 100% 70%);
   }
 
   @media (max-width: 767px) {
