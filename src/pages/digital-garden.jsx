@@ -21,9 +21,9 @@ const GardenLink = styled(Link)`
   justify-content: center;
   padding: 1em;
   border-radius: 5px;
-  margin: 0.5em;
+  margin: 0.8em;
   white-space: pre-line;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px hsl(0deg 0% 100% / 15%);
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -35,11 +35,11 @@ const GardenLink = styled(Link)`
     content: '';
     position: absolute;
     z-index: -1;
-    // width: 100%;
-    // height: 100%;
+    width: 100%;
+    height: 100%;
     opacity: 0;
     border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px hsl(0deg 0% 100% / 30%);
     transition: opacity 0.3s ease-in-out;
   }
 
