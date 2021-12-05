@@ -22,7 +22,7 @@ const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
       <Links>
-        <StyledLink to="/">Digital Garden</StyledLink>
+        <StyledLink to="/digital-garden">Digital Garden</StyledLink>
         <StyledLink to="/">Portfolio</StyledLink>
         <StyledLink to="/">About</StyledLink>
       </Links>

@@ -60,7 +60,7 @@ const Header = () => {
           <Menu open={menuOpen} setOpen={setMenuOpen} />
         </LinksMobile>
         <LinksDesktop>
-          <StyledLink to="/">Digital Garden</StyledLink>
+          <StyledLink to="/digital-garden">Digital Garden</StyledLink>
           <StyledLink to="/">Portfolio</StyledLink>
           <StyledLink to="/">About</StyledLink>
         </LinksDesktop>
