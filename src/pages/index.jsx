@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Logo from '../components/Logo'
 import { theme } from '../theme'
@@ -93,9 +94,7 @@ const Intro = () => {
       </p>
       <p>
         This is my personal site I'm taking care of on my{' '}
-        <StyledExternalLink href="https://joelhooks.com/digital-garden">
-          Digital Garden
-        </StyledExternalLink>{' '}
+        <Link to="/digital-garden">Digital Garden</Link>{' '}
         and sharing knowledge by{' '}
         <StyledExternalLink href="https://twitter.com/swyx/status/1009174159690264579">
           learning in public

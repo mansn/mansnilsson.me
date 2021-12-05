@@ -48,9 +48,36 @@ const GardenLink = styled(Link)`
   }
 `
 
+const UnpublishedContent = styled.div`
+  border: hsl(327deg 100% 70% / 40%) solid 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  border-radius: 5px;
+  margin: 0.8em;
+  white-space: pre-line;
+  box-shadow: 0 5px 15px hsl(0deg 0% 100% / 15%);
+  transition: all 0.3s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px hsl(0deg 0% 100% / 30%);
+    transition: opacity 0.3s ease-in-out;
+  }
+`
+
 const InspiredBy = styled.span`
+  font-weight: 600;
   display: block;
   margin-top: 2em;
+  margin-right: 0.5em;
 `
 
 const DigitalGarden = () => {
@@ -69,17 +96,22 @@ const DigitalGarden = () => {
               <span>{`People That
               Inspire Me`}</span>
             </GardenLink>
-            <GardenLink>
+            <UnpublishedContent>
               <span>{`Upcoming Post`}</span>
-            </GardenLink>
-            <GardenLink>
+            </UnpublishedContent>
+            <UnpublishedContent>
               <span>{`Upcoming Post`}</span>
-            </GardenLink>
-            <GardenLink>
+            </UnpublishedContent>
+            <UnpublishedContent>
               <span>{`Upcoming Post`}</span>
-            </GardenLink>
+            </UnpublishedContent>
           </Garden>
-          <InspiredBy>Inspired by: </InspiredBy>
+          <InspiredBy>
+            Inspired by:{' '}
+            <a href="https://joelhooks.com/digital-garden">
+              Joel Hooks' Digital Garden
+            </a>
+          </InspiredBy>
         </Content>
       </Layout>
     </ThemeProvider>

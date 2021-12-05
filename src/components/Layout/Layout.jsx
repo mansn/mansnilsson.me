@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     transition: all 0.3s ease-in-out 0s;
     margin-top: 1em;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     color: hsl(327deg 100% 70%);
   }
 
@@ -41,6 +41,11 @@ const GlobalStyle = createGlobalStyle`
     body {
       padding: 20px;
     }
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
   }
 `
 
