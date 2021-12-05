@@ -48,6 +48,11 @@ const GardenLink = styled(Link)`
   }
 `
 
+const InspiredBy = styled.span`
+  display: block;
+  margin-top: 2em;
+`
+
 const DigitalGarden = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -60,19 +65,21 @@ const DigitalGarden = () => {
                 2009 - 2021`}
               </span>
             </GardenLink>
-            <GardenLink to="/my-journey-2009-2021">
+            <GardenLink to="/people-that-inspire-me">
+              <span>{`People That
+              Inspire Me`}</span>
+            </GardenLink>
+            <GardenLink>
               <span>{`Upcoming Post`}</span>
             </GardenLink>
-            <GardenLink to="/my-journey-2009-2021">
+            <GardenLink>
               <span>{`Upcoming Post`}</span>
             </GardenLink>
-            <GardenLink to="/my-journey-2009-2021">
-              <span>{`Upcoming Post`}</span>
-            </GardenLink>
-            <GardenLink to="/my-journey-2009-2021">
+            <GardenLink>
               <span>{`Upcoming Post`}</span>
             </GardenLink>
           </Garden>
+          <InspiredBy>Inspired by: </InspiredBy>
         </Content>
       </Layout>
     </ThemeProvider>
