@@ -10,7 +10,6 @@ const StyledContent = styled.div`
   justify-content: center;
   text-align: center;
   grid-column: 2;
-  z-index: -1;
 `
 
 const StyledIntro = styled.div`
@@ -19,7 +18,6 @@ const StyledIntro = styled.div`
   justify-content: center;
   text-align: center;
   grid-column: 2;
-  z-index: -1;
 `
 export default function Template({ data }) {
   const { markdownRemark } = data

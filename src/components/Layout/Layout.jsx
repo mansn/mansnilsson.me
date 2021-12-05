@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     fill: hsl(0deg 0% 100%)
   }
 
+  a:hover {
+    color: hsl(280deg 45% 64%)
+  }
+
   a:hover svg {
     fill: rgba(255, 20, 147, 0.8);
   }
