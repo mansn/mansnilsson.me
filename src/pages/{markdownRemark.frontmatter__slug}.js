@@ -30,7 +30,6 @@ export default function Template({ data }) {
           <h2>{frontmatter.date}</h2>
         </StyledIntro>
         <StyledContent
-          className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </Layout>

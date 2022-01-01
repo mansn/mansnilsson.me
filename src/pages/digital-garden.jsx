@@ -6,12 +6,16 @@ import { theme } from '../theme'
 
 const Content = styled.div`
   grid-column: 2;
+  margin: 0 auto;
 `
 
 const Garden = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   text-align: center;
+  justify-content: center;
 `
 
 const GardenLink = styled(Link)`
@@ -19,12 +23,13 @@ const GardenLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  padding: 16px 16px;
   border-radius: 5px;
-  margin: 0.8em;
+  margin: 16px;
   white-space: pre-line;
   box-shadow: 0 5px 15px hsl(0deg 0% 100% / 15%);
   transition: all 0.3s ease-in-out;
+  width: fit-content;
 
   &:hover {
     color: hsl(327deg 100% 70%);
@@ -32,15 +37,17 @@ const GardenLink = styled(Link)`
   }
 
   &::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px hsl(0deg 0% 100% / 30%);
-    transition: opacity 0.3s ease-in-out;
+    @media (min-width: 768px) {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px hsl(0deg 0% 100% / 30%);
+      transition: opacity 0.3s ease-in-out;
+    }
   }
 
   &:hover::after {
@@ -53,31 +60,19 @@ const UnpublishedContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  padding: 16px;
   border-radius: 5px;
-  margin: 0.8em;
+  margin: 16px;
   white-space: pre-line;
   box-shadow: 0 5px 15px hsl(0deg 0% 100% / 15%);
   transition: all 0.3s ease-in-out;
-
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px hsl(0deg 0% 100% / 30%);
-    transition: opacity 0.3s ease-in-out;
-  }
 `
 
 const InspiredBy = styled.span`
   font-weight: 600;
   display: block;
-  margin-top: 2em;
-  margin-right: 0.5em;
+  padding-top: 48px;
+  padding-left: 16px;
 `
 
 const DigitalGarden = () => {

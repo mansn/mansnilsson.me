@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Burger from '../Burger'
 import Menu from '../Menu'
+import CommonLinks from '../CommonLinks'
 import { StyledHeader } from './Header.styled'
 import { useOnClickOutside } from '../../hooks'
 
@@ -24,16 +25,6 @@ const StyledHomeLink = styled(Link)`
   text-decoration: none;
   color: hsl(0deg 0% 100%);
   font-weight: 900;
-`
-
-const StyledLink = styled(Link)`
-  padding: 0 20px;
-  text-decoration: none;
-  color: hsl(327deg 100% 70%);
-  &:hover {
-    color: hsl(0deg 0% 100%);
-  }
-  border-radius: 8px;
 `
 
 const LinksDesktop = styled.div`
@@ -60,9 +51,7 @@ const Header = () => {
           <Menu open={menuOpen} setOpen={setMenuOpen} />
         </LinksMobile>
         <LinksDesktop>
-          <StyledLink to="/digital-garden">Digital Garden</StyledLink>
-          <StyledLink to="/">Portfolio</StyledLink>
-          <StyledLink to="/">About</StyledLink>
+          <CommonLinks />
         </LinksDesktop>
       </Nav>
     </StyledHeader>

@@ -3,14 +3,8 @@ import styled, { ThemeProvider } from 'styled-components'
 import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Logo from '../components/Logo'
+import ExternalLink from '../components/ExternalLink'
 import { theme } from '../theme'
-
-const StyledExternalLink = styled.a`
-  margin-top: 1em;
-  text-decoration: none;
-  font-weight: bold;
-  color: hsl(327deg 100% 70%);
-`
 
 const StyledName = styled.div`
   grid-column: name;
@@ -41,37 +35,6 @@ const Me = () => {
   )
 }
 
-const List = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-const StyledPortfolio = styled.div`
-  grid-column: 2;
-`
-
-const Portfolio = () => {
-  return (
-    <StyledPortfolio>
-      <h3>Portfolio</h3>
-      <List className="portfolio">
-        <StyledExternalLink href="https://github.com/weaddquality/business-model-canvas">
-          Business Model Canvas (React Web App)
-        </StyledExternalLink>
-        <StyledExternalLink href="https://github.com/weaddquality/bmc-aws-lambda-serverless">
-          Business Model Canvas (Serverless backend)
-        </StyledExternalLink>
-        <StyledExternalLink href="https://github.com/mansn/workout">
-          Workout App{' '}
-          <span role="img" aria-label="man weightlifter">
-            🏋️‍♂️ (React JAMStack App)
-          </span>
-        </StyledExternalLink>
-      </List>
-    </StyledPortfolio>
-  )
-}
-
 const StyledIntro = styled.div`
   grid-column: 2;
 `
@@ -86,37 +49,17 @@ const Intro = () => {
         </span>
       </p>
       <p>
-        I&apos;m a Fullstack Developer within JavaScript. I work at{' '}
-        <StyledExternalLink href="https://www.qred.com/">
-          Qred AB
-        </StyledExternalLink>
-        .
+        I&apos;m working as an Engineering Manager & Fullstack Developer (within JavaScript) at{' '}
+        <ExternalLink href="https://www.qred.com/">Qred AB</ExternalLink>.
       </p>
       <p>
-        This is my personal site I'm taking care of on my{' '}
-        <Link to="/digital-garden">Digital Garden</Link>{' '}
-        and sharing knowledge by{' '}
-        <StyledExternalLink href="https://twitter.com/swyx/status/1009174159690264579">
+        This is my personal site I'm taking care of my{' '}
+        <Link to="/digital-garden">Digital Garden</Link> and sharing knowledge
+        by{' '}
+        <ExternalLink href="https://twitter.com/swyx/status/1009174159690264579">
           learning in public
-        </StyledExternalLink>
+        </ExternalLink>
         .
-      </p>
-      <p>
-        I also provide a list of personal projects at the bottom of the page for
-        anyone that&apos;s interested{' '}
-        <span role="img" aria-label="slightly smiling face">
-          🙂
-        </span>
-      </p>
-      <p>
-        Oh, btw: I think the{' '}
-        <StyledExternalLink href="https://www.angryweasel.com/ABTesting/modern-testing-principles/">
-          Modern Testing Principles
-        </StyledExternalLink>{' '}
-        are amazing, and highly recommend everyone to embrace them.{' '}
-        <span role="img" aria-label="slightly smiling face">
-          🙂
-        </span>
       </p>
     </StyledIntro>
   )
@@ -129,7 +72,6 @@ const IndexPage = () => {
         <title>mansnilsson.me</title>
         <Me />
         <Intro />
-        <Portfolio />
       </Layout>
     </ThemeProvider>
   )

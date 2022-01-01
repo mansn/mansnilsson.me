@@ -29,7 +29,7 @@ export default function Template({ data }) {
         <StyledIntro>
           <h1>{frontmatter.title}</h1>
         </StyledIntro>
-        <StyledContent className="blog-post-content">
+        <StyledContent>
           <MDXRenderer>{body}</MDXRenderer>
         </StyledContent>
       </Layout>

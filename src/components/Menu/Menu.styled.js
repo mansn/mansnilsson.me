@@ -8,9 +8,10 @@ export const StyledMenu = styled.nav`
   text-align: left;
   position: absolute;
   left: 0;
-  transition: all 0.3s ease-in-out;
-  opacity: ${({ open }) => (open ? '1' : '0')};
-  top: ${({ open }) => (open ? '70px' : '65px')};
+  transition: 0.5s;
+  opacity: ${({ state }) => (state === 'entered' ? '1' : '0')};
+  display: ${({ state }) => (state === 'exited' ? 'none' : 'block')};
+  top: ${({ state }) => (state === 'entered' ? '70px' : '65px')};
   align-items: flex-start;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {

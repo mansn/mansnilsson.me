@@ -6,15 +6,24 @@ import { StyledMain } from './Layout.styled'
 import '../../styles/typography.css'
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0 auto;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  body {
+    padding: 48px;
     background: ${({ theme }) => theme.primaryDark};
     color: ${({ theme }) => theme.primaryLight};
-    padding: 40px;
     font-family: MontSerrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.7;
+    line-height: 1.4;
   }
 
   svg {
@@ -37,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
     color: hsl(327deg 100% 70%);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     body {
       padding: 20px;
     }
