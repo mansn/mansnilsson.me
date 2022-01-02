@@ -25,6 +25,11 @@ const StyledHomeLink = styled(Link)`
   text-decoration: none;
   color: hsl(0deg 0% 100%);
   font-weight: 900;
+  &:focus {
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      color: white;
+    }
+  }
 `
 
 const LinksDesktop = styled.div`
