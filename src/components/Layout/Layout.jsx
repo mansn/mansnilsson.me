@@ -1,24 +1,37 @@
-import React from "react";
-import { createGlobalStyle } from "styled-components";
-import Header from "../Header";
-import Footer from "../Footer";
-import { StyledMain } from "./Layout.styled";
-import "../../css/typography.css";
+import React from 'react'
+import { createGlobalStyle } from 'styled-components'
+import Header from '../Header'
+import Footer from '../Footer'
+import { StyledMain } from './Layout.styled'
+import '../../styles/typography.css'
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0 auto;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  body {
+    padding: 48px;
     background: ${({ theme }) => theme.primaryDark};
     color: ${({ theme }) => theme.primaryLight};
-    padding: 40px;
     font-family: MontSerrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.7;
+    line-height: 1.4;
   }
 
   svg {
     fill: hsl(0deg 0% 100%)
+  }
+
+  a:hover {
+    color: hsl(280deg 45% 64%)
   }
 
   a:hover svg {
@@ -27,14 +40,23 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     transition: all 0.3s ease-in-out 0s;
+    margin-top: 1em;
+    text-decoration: none;
+    font-weight: 600;
+    color: hsl(327deg 100% 70%);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     body {
       padding: 20px;
     }
   }
-`;
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+`
 
 const Layout = ({ children }) => {
   return (
@@ -44,7 +66,7 @@ const Layout = ({ children }) => {
       <StyledMain>{children}</StyledMain>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

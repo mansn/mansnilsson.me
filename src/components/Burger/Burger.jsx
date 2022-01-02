@@ -1,5 +1,5 @@
-import React from "react";
-import { StyledBurger } from "./Burger.styled";
+import React from 'react'
+import { StyledBurger } from './Burger.styled'
 
 const Burger = ({ open, setOpen }) => {
   return (
@@ -8,7 +8,7 @@ const Burger = ({ open, setOpen }) => {
       <div />
       <div />
     </StyledBurger>
-  );
-};
+  )
+}
 
-export default Burger;
+export default Burger

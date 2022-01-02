@@ -1,40 +1,36 @@
-import React, { useState, useRef } from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
-import Burger from "../Burger";
-import Menu from "../Menu";
-import { StyledHeader } from "./Header.styled";
-import { useOnClickOutside } from "../../hooks";
+import React, { useState, useRef } from 'react'
+import styled from 'styled-components'
+import { Link } from 'gatsby'
+import Burger from '../Burger'
+import Menu from '../Menu'
+import CommonLinks from '../CommonLinks'
+import { StyledHeader } from './Header.styled'
+import { useOnClickOutside } from '../../hooks'
 
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
-`;
+`
 
 const LinksMobile = styled.div`
   @media (min-width: ${({ theme }) => theme.mobile}) {
     display: none;
   }
-`;
+`
 
 const StyledHomeLink = styled(Link)`
   display: flex;
   text-decoration: none;
   color: hsl(0deg 0% 100%);
   font-weight: 900;
-`;
-
-const StyledLink = styled(Link)`
-  padding: 0 20px;
-  text-decoration: none;
-  color: hsl(327deg 100% 70%);
   &:hover {
-    color: hsl(0deg 0% 100%);
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      color: white;
+    }
   }
-  border-radius: 8px;
-`;
+`
 
 const LinksDesktop = styled.div`
   display: flex;
@@ -42,12 +38,12 @@ const LinksDesktop = styled.div`
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: none;
   }
-`;
+`
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const node = useRef();
-  useOnClickOutside(node, () => setMenuOpen(false));
+  const [menuOpen, setMenuOpen] = useState(false)
+  const node = useRef()
+  useOnClickOutside(node, () => setMenuOpen(false))
 
   return (
     <StyledHeader>
@@ -60,13 +56,11 @@ const Header = () => {
           <Menu open={menuOpen} setOpen={setMenuOpen} />
         </LinksMobile>
         <LinksDesktop>
-          <StyledLink to="/">Digital Garden</StyledLink>
-          <StyledLink to="/">Portfolio</StyledLink>
-          <StyledLink to="/">About</StyledLink>
+          <CommonLinks />
         </LinksDesktop>
       </Nav>
     </StyledHeader>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

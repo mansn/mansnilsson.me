@@ -1,0 +1,6 @@
+# Ignore artifacts:
+.cache
+coverage
+
+# Ignore all HTML files:
+*.html

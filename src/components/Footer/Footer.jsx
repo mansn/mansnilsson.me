@@ -1,26 +1,26 @@
-import React from "react";
-import { StyledFooter } from "./Footer.styled";
+import React from 'react'
+import { StyledFooter } from './Footer.styled'
 
 const linkStyle = {
-  textDecoration: "none",
-  fontWeight: "bold",
-  color: "hsl(327deg 100% 70%)"
-};
+  textDecoration: 'none',
+  fontWeight: 'bold',
+  color: 'hsl(327deg 100% 70%)',
+}
 
 const socialStyle = {
-  gridColumn: "social",
-  display: "flex",
-  columnGap: "0.8em"
-};
+  gridColumn: 'social',
+  display: 'flex',
+  columnGap: '0.8em',
+}
 
 const copywrightStyle = {
-  gridColumn: "copywright",
-  opacity: 0.35
-};
+  gridColumn: 'copywright',
+  opacity: 0.35,
+}
 
 const listItemStyles = {
-  listStyleType: "none"
-};
+  listStyleType: 'none',
+}
 
 const Footer = () => {
   return (
@@ -46,7 +46,11 @@ const Footer = () => {
           </a>
         </li>
         <li style={listItemStyles}>
-          <a style={linkStyle} className="twitter" href="https://twitter.com/the_mni">
+          <a
+            style={linkStyle}
+            className="twitter"
+            href="https://twitter.com/the_mni"
+          >
             <svg
               role="img"
               width="24"
@@ -60,7 +64,11 @@ const Footer = () => {
           </a>
         </li>
         <li style={listItemStyles}>
-          <a style={linkStyle} className="github" href="https://github.com/mansn">
+          <a
+            style={linkStyle}
+            className="github"
+            href="https://github.com/mansn"
+          >
             <svg
               role="img"
               width="24"
@@ -75,7 +83,7 @@ const Footer = () => {
         </li>
       </ul>
     </StyledFooter>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
