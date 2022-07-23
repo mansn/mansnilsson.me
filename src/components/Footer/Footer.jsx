@@ -25,7 +25,9 @@ const listItemStyles = {
 const Footer = () => {
   return (
     <StyledFooter>
-      <p style={copywrightStyle}>Måns Nilsson © 2021</p>
+      <p
+        style={copywrightStyle}
+      >{`Måns Nilsson © ${new Date().getFullYear()}`}</p>
       <ul style={socialStyle}>
         <li style={listItemStyles}>
           <a
