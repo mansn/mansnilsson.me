@@ -49,12 +49,13 @@ const Intro = () => {
         </span>
       </p>
       <p>
-        I&apos;m working as an Engineering Manager & Fullstack Developer (within JavaScript) at{' '}
+        I&apos;m working as an Engineering Manager & Fullstack Developer (within
+        JavaScript) at{' '}
         <ExternalLink href="https://www.qred.com/">Qred AB</ExternalLink>.
       </p>
       <p>
-        This is my personal site I'm taking care of my{' '}
-        <Link to="/digital-garden">Digital Garden</Link> and sharing knowledge
+        This is my personal site where I'm taking care of my{' '}
+        <Link to="/digital-garden">Digital Garden</Link>, and sharing knowledge
         by{' '}
         <ExternalLink href="https://twitter.com/swyx/status/1009174159690264579">
           learning in public
