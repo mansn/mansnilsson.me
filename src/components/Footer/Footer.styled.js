@@ -6,4 +6,5 @@ export const StyledFooter = styled.footer`
   margin-top: 3em;
   display: grid;
   grid-template-columns: [copywright] 1fr [social];
+  font-size: 16px;
 `

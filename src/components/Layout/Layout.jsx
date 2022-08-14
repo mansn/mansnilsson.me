@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: MontSerrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.4;
+    font-size: 1rem;
   }
 
   svg {
@@ -53,7 +54,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    font-size: 1rem;
+    font-size: calc(1.1875rem);
     line-height: 1.7;
   }
 `

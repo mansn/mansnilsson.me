@@ -16,6 +16,7 @@ const socialStyle = {
 const copywrightStyle = {
   gridColumn: 'copywright',
   opacity: 0.35,
+  alignSelf: 'center',
 }
 
 const listItemStyles = {
@@ -25,9 +26,9 @@ const listItemStyles = {
 const Footer = () => {
   return (
     <StyledFooter>
-      <p
+      <div
         style={copywrightStyle}
-      >{`Måns Nilsson © ${new Date().getFullYear()}`}</p>
+      >{`Måns Nilsson © ${new Date().getFullYear()}`}</div>
       <ul style={socialStyle}>
         <li style={listItemStyles}>
           <a
