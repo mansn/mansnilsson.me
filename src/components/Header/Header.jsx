@@ -46,20 +46,14 @@ const Header = () => {
   useOnClickOutside(node, () => setMenuOpen(false))
 
   return (
-    <StyledHeader>
-      <Nav>
-        <StyledHomeLink to="/">
-          <span>Måns Nilsson</span>
-        </StyledHomeLink>
-        <LinksMobile ref={node}>
-          <Burger open={menuOpen} setOpen={setMenuOpen} />
-          <Menu open={menuOpen} setOpen={setMenuOpen} />
-        </LinksMobile>
-        <LinksDesktop>
-          <CommonLinks />
-        </LinksDesktop>
-      </Nav>
-    </StyledHeader>
+    <header className="flex items-center">
+      <nav>
+        <div>
+          <a to="/digital-garden">Digital Garden</a>
+          <a to="/">About</a>
+        </div>
+      </nav>
+    </header>
   )
 }
 
