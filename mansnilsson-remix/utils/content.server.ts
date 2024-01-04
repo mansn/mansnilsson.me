@@ -1,5 +1,5 @@
 import parseFrontMatter from 'front-matter'
-import { readFile, readdir } from './fs.server'
+import { readFile, readdir, fileExists } from './fs.server'
 import path from 'path'
 import { bundleMDX } from './mdx.server'
 
@@ -20,6 +20,7 @@ export type Frontmatter = {
  */
 export async function getPost(slug: string) {
   const filePath = path.join(process.cwd(), 'app', 'content', slug + '.mdx')
+  if(!await fileExists(filePath)) return null
 
   const source = await readFile(filePath, 'utf-8')
 
