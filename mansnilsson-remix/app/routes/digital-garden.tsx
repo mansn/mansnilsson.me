@@ -1,7 +1,6 @@
 import { Outlet } from '@remix-run/react'
-import styled, { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 import Layout from '../shared/components/Layout'
-import { theme } from '../theme'
 
 const Content = styled.div`
   grid-column: 2;
@@ -76,40 +75,40 @@ const InspiredBy = styled.span`
 
 const DigitalGarden = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <Content>
-          <Garden>
-            <GardenLink href="/my-journey-2009-2021">
-              <span>
-                {`My Journey
+    <Layout>
+      <div className='grid-cols-2 my-0 mx-auto'>
+        <div className='max-w-4xl flex flex-wrap flex-row text-center justify-center'>
+          <a className='border-x-gray-500 flex items-center justify-center p-16 rounded 
+          m-16 whitespace-pre-line shadow-black transition ease-in-out delay-300
+          w-fit hover:scale-1' href="/my-journey-2009-2021">
+            <span>
+              {`My Journey
                 2009 - 2021`}
-              </span>
-            </GardenLink>
-            <GardenLink href="/people-that-inspire-me">
-              <span>{`People That
+            </span>
+          </a>
+          <GardenLink href="/people-that-inspire-me">
+            <span>{`People That
               Inspire Me`}</span>
-            </GardenLink>
-            <UnpublishedContent>
-              <span>{`Upcoming Post`}</span>
-            </UnpublishedContent>
-            <UnpublishedContent>
-              <span>{`Upcoming Post`}</span>
-            </UnpublishedContent>
-            <UnpublishedContent>
-              <span>{`Upcoming Post`}</span>
-            </UnpublishedContent>
-          </Garden>
-          <InspiredBy>
-            Inspired by:{' '}
-            <a href="https://joelhooks.com/digital-garden">
-              Joel Hooks' Digital Garden
-            </a>
-          </InspiredBy>
-          <Outlet />
-        </Content>
-      </Layout>
-    </ThemeProvider>
+          </GardenLink>
+          <UnpublishedContent>
+            <span>{`Upcoming Post`}</span>
+          </UnpublishedContent>
+          <UnpublishedContent>
+            <span>{`Upcoming Post`}</span>
+          </UnpublishedContent>
+          <UnpublishedContent>
+            <span>{`Upcoming Post`}</span>
+          </UnpublishedContent>
+        </div>
+        <InspiredBy>
+          Inspired by:{' '}
+          <a href="https://joelhooks.com/digital-garden">
+            Joel Hooks' Digital Garden
+          </a>
+        </InspiredBy>
+        <Outlet />
+      </div>
+    </Layout>
   )
 }
 

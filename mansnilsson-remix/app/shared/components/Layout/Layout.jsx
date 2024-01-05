@@ -18,8 +18,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     padding: 48px;
-    background: ${({ theme }) => theme.primaryDark};
-    color: ${({ theme }) => theme.primaryLight};
+    background: #0D0C1D;
+    color: #EFFFFA;
     font-family: MontSerrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.4;
