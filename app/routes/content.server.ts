@@ -1,7 +1,7 @@
 import parseFrontMatter from 'front-matter'
 import { readFile, readdir, fileExists } from './fs.server'
 import path from 'path'
-import { bundleMDX } from './mdx.server'
+export { bundleMDX } from 'mdx-bundler'
 
 // The frontmatter can be any set of key values
 // But that's not especially useful to use
@@ -20,7 +20,7 @@ export type Frontmatter = {
  */
 export async function getPost(slug: string) {
   const filePath = path.join(process.cwd(), 'app', 'content', slug + '.mdx')
-  if(!await fileExists(filePath)) return null
+  if (!(await fileExists(filePath))) return null
 
   const source = await readFile(filePath, 'utf-8')
 
@@ -30,7 +30,7 @@ export async function getPost(slug: string) {
     import('remark-gfm').then((mod) => mod.default),
   ])
 
-  const post = await bundleMDX<Frontmatter>({
+  const post = await mdxServer.bundleMDX<Frontmatter>({
     source,
     cwd: process.cwd(),
 

@@ -62,7 +62,6 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <Header />
       <StyledMain>{children}</StyledMain>
       <Footer />
     </>

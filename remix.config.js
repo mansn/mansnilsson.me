@@ -1,11 +1,9 @@
+import { config } from '@netlify/remix-edge-adapter'
+
+
 /** @type {import('@remix-run/dev').AppConfig} */
-module.exports = {
-  serverBuildTarget: "netlify",
-  server:
-    process.env.NETLIFY || process.env.NETLIFY_LOCAL
-      ? "./server.js"
-      : undefined,
-  ignoredRouteFiles: ["**/.*"],
+export default {
+  ...config,
   mdx: async (filename, ...rest) => {
     const [rehypeHighlight, remarkToc] = await Promise.all([
       import("rehype-highlight").then((mod) => mod.default),

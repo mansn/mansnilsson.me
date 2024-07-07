@@ -7,11 +7,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
-import Header from '../app/shared/components/Header'
+// import Header from '../app/shared/components/Header'
 
-import styles from './tailwind.css'
+// import styles from "./tailwind.css";
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles}]
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -26,11 +26,11 @@ export default function App() {
       className="bg-slate-900 prose lg:prose-xl py-10 prose-headings:text-white prose-p:text-slate-400 prose-strong:text-slate-400 prose-a:text-yellow-400 container mx-auto"
     >
       <head>
-        <Meta />
         <Links />
+        <Meta />
       </head>
       <body>
-        <Header />
+        {/* <Header /> */}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
