@@ -1,10 +1,11 @@
 import { useLoaderData } from '@remix-run/react'
-import type { Frontmatter } from 'utils/content.server'
-import * as contentServer from 'utils/content.server'
+import { json } from '@remix-run/node'
+import type { Frontmatter } from '~/utils/content.server'
+import { getPosts } from '~/utils/content.server'
 
 export async function loader(data) {
-  const posts = await contentServer.getPosts()
-  return posts
+  const posts = await getPosts()
+  return json(posts)
 }
 
 function ListOfBlogPosts() {
@@ -32,19 +33,19 @@ function BlogItem(props: {
   const { item } = props
   return (
     <div className="blog-item">
-      <a href={`/${item.slug}`}>
+      <a href={`/blog/${item.slug}`}>
         {' '}
-        <h3>{item.frontmatter.meta?.title ?? item.slug} </h3>
+        <h3>{item.frontmatter.attributes.meta?.title ?? item.slug} </h3>
       </a>
-      <p>{item.frontmatter.meta?.description}</p>
+      <p>{item.frontmatter.attributes.meta?.description}</p>
     </div>
   )
 }
 
 export default function Index() {
   return (
-    <div className="font-serif leading-7">
-      <h1>Welcome to Remix</h1>
+    <div className="leading-7">
+      <h1>Måns Nilsson</h1>
       <ListOfBlogPosts />
     </div>
   )

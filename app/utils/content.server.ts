@@ -1,15 +1,30 @@
 import parseFrontMatter from 'front-matter'
-import { readFile, readdir, fileExists } from './fs.server'
+import { readFile, readdir, access } from 'fs/promises'
 import path from 'path'
-export { bundleMDX } from 'mdx-bundler'
+import { bundleMDX } from 'mdx-bundler'
+
+async function fileExists(filename: string) {
+  try {
+    await access(filename)
+    return true
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      return false
+    } else {
+      throw err
+    }
+  }
+}
 
 // The frontmatter can be any set of key values
 // But that's not especially useful to use
 // So we'll declare our own set of properties that we are going to expect to exist
 export type Frontmatter = {
-  meta?: {
-    title?: string
-    description?: string
+  attributes: {
+    meta?: {
+      title?: string
+      description?: string
+    }
   }
 }
 
@@ -30,7 +45,7 @@ export async function getPost(slug: string) {
     import('remark-gfm').then((mod) => mod.default),
   ])
 
-  const post = await mdxServer.bundleMDX<Frontmatter>({
+  const post = await bundleMDX<Frontmatter>({
     source,
     cwd: process.cwd(),
 
@@ -79,7 +94,7 @@ export async function getPosts() {
       const fPath = path.join(filePath, dirent.name)
       const [file] = await Promise.all([readFile(fPath)])
       const frontmatter = parseFrontMatter(file.toString())
-      const attributes = frontmatter.attributes as Frontmatter
+      const attributes = frontmatter as Frontmatter
 
       return {
         slug: dirent.name.replace(/\.mdx/, ''),
