@@ -49,8 +49,7 @@ const Intro = () => {
         </span>
       </p>
       <p>
-        I&apos;m working as an Engineering Manager & Fullstack Developer (within
-        JavaScript) at{' '}
+        I&apos;m working as a Fullstack Developer (within JavaScript) at{' '}
         <ExternalLink href="https://www.qred.com/">Qred AB</ExternalLink>.
       </p>
       <p>
