@@ -28,24 +28,14 @@ export type Frontmatter = {
   }
 }
 
-/**
- * Get the React component, and frontmatter JSON for a given slug
- * @param slug
- * @returns
- */
-export async function getPost(slug: string) {
-  const filePath = path.join(process.cwd(), 'app', 'content', slug + '.mdx')
-  if (!(await fileExists(filePath))) return null
-
-  const source = await readFile(filePath, 'utf-8')
-
-  // Dyamically import all the rehype/remark plugins we are using
+const getMdx = async (source: string) => {
+  // Dynamically import all the rehype/remark plugins we are using
   const [rehypeHighlight, remarkGfm] = await Promise.all([
     import('rehype-highlight').then((mod) => mod.default),
     import('remark-gfm').then((mod) => mod.default),
   ])
 
-  const post = await bundleMDX<Frontmatter>({
+  const mdx = await bundleMDX<Frontmatter>({
     source,
     cwd: process.cwd(),
 
@@ -70,6 +60,44 @@ export async function getPost(slug: string) {
     },
   })
 
+  return mdx
+}
+
+export async function getIntro() {
+  const filePath = path.join(process.cwd(), 'app', 'content', 'intro.mdx')
+  if (!(await fileExists(filePath))) return null
+
+  const source = await readFile(filePath, 'utf-8')
+
+  const post = await getMdx(source)
+
+  return {
+    ...post,
+    frontmatter: {
+      ...post.frontmatter,
+    },
+  }
+}
+
+/**
+ * Get the React component, and frontmatter JSON for a given slug
+ * @param slug
+ * @returns
+ */
+export async function getPost(slug: string) {
+  const filePath = path.join(
+    process.cwd(),
+    'app',
+    'content',
+    'posts',
+    slug + '.mdx'
+  )
+  if (!(await fileExists(filePath))) return null
+
+  const source = await readFile(filePath, 'utf-8')
+
+  const post = await getMdx(source)
+
   return {
     ...post,
     frontmatter: {
@@ -83,7 +111,7 @@ export async function getPost(slug: string) {
  * @returns
  */
 export async function getPosts() {
-  const filePath = path.join(process.cwd(), 'app', 'content')
+  const filePath = path.join(process.cwd(), 'app', 'content', 'posts')
 
   const postsPath = await readdir(filePath, {
     withFileTypes: true,
