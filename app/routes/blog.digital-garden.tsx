@@ -10,11 +10,11 @@ const DigitalGarden = () => {
           m-16 whitespace-pre-line shadow-black transition ease-in-out delay-300
           w-fit hover:scale-1
           text-white"
-              href="/my-journey-2009-2021"
+              href="/my-journey-2009-2024"
             >
               <span className='text-white'>
                 {`My Journey
-                2009 - 2021`}
+                2009 - 2024`}
               </span>
             </a>
             <a className='' href="/people-that-inspire-me">

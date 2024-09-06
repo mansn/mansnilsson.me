@@ -36,10 +36,14 @@ export const loader: LoaderFunction = async ({ params }) => {
 }
 
 function PostHeader(props: { frontmatter: Frontmatter }) {
-  // const { frontmatter } = props;
+  const { frontmatter } = props
 
-  // We can implement whatever we want here
-  return <>{/* {JSON.stringify(frontmatter, null, 2)} */}</>
+  return (
+    <div className="flex flex-col">
+      <h3 className="text-slate-500">{frontmatter.title}</h3>
+      <span className="text-slate-500 text-xs">Updated: {frontmatter.date}</span>
+    </div>
+  )
 }
 
 export default function Post() {
@@ -48,6 +52,13 @@ export default function Post() {
 
   return (
     <>
+      <header>
+        <h6 className="text-slate-50">
+          <a className="" href="/">
+            Måns Nilsson
+          </a>
+        </h6>
+      </header>
       <PostHeader frontmatter={frontmatter} />
       <Component />
     </>

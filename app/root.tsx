@@ -6,9 +6,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
-import Header from '../app/shared/components/Header'
 
 import styles from './tailwind.css?url'
+import Footer from './shared/components/Footer'
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
 
@@ -26,7 +26,18 @@ export default function App() {
   return (
     <html
       lang="en"
-      className="bg-slate-900 prose lg:prose-xl py-10 prose-headings:text-white prose-p:text-slate-400 prose-strong:text-slate-400 prose-a:text-yellow-400 container mx-auto"
+      className="
+      bg-slate-950
+      prose
+      lg:prose-md
+      py-10
+      prose-headings:text-white
+      prose-p:text-slate-400
+      prose-strong:text-slate-400
+      prose-a:text-yellow-400
+      prose-ul:text-slate-400
+      container
+      mx-auto"
     >
       <head>
         <Links />
@@ -36,10 +47,10 @@ export default function App() {
         <Meta />
       </head>
       <body>
-        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
+        <Footer />
       </body>
     </html>
   )

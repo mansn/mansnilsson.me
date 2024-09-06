@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 export default {
-  content: ['./app/**/*.{ts,tsx,jsx,js}'],
+  content: ['./app/**/*.{ts,tsx,jsx,js,mdx}'],
   theme: {
     container: {
       center: true,
@@ -11,6 +11,5 @@ export default {
   plugins: [
     require('@tailwindcss/typography'),
     // ...
-  ]
+  ],
 } satisfies Config
-
