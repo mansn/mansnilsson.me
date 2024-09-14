@@ -1,32 +1,15 @@
-const linkStyle = {
-  textDecoration: 'none',
-  fontWeight: 'bold',
-  color: 'hsl(327deg 100% 70%)',
-}
-
-const socialStyle = {
-  gridColumn: 'social',
-  display: 'flex',
-  columnGap: '0.8em',
-}
-
-const listItemStyles = {
-  listStyleType: 'none',
-}
-
 export default function Footer() {
   return (
     <footer className="w-800 my-auto mt-6 flex text-md justify-between">
       <span className="text-slate-500">{`Måns Nilsson © ${new Date().getFullYear()}`}</span>
-      <ul style={socialStyle}>
-        <li style={listItemStyles}>
+      <ul className="flex gap-x-1">
+        <li className="list-none">
           <a
-            style={linkStyle}
             className="linkedin"
             href="https://www.linkedin.com/in/mansnilsson1/"
           >
             <svg
-              className="fill-white"
+              className="fill-white hover:fill-rose-300"
               role="img"
               width="24"
               height="20"
@@ -38,14 +21,10 @@ export default function Footer() {
             </svg>
           </a>
         </li>
-        <li style={listItemStyles}>
-          <a
-            style={linkStyle}
-            className="twitter"
-            href="https://twitter.com/the_mni"
-          >
+        <li className="list-none">
+          <a className="twitter" href="https://twitter.com/the_mni">
             <svg
-              className="fill-white"
+              className="fill-white hover:fill-rose-300"
               role="img"
               width="24"
               height="20"
@@ -57,14 +36,10 @@ export default function Footer() {
             </svg>
           </a>
         </li>
-        <li style={listItemStyles}>
-          <a
-            style={linkStyle}
-            className="github"
-            href="https://github.com/mansn"
-          >
+        <li className="list-none">
+          <a className="github" href="https://github.com/mansn">
             <svg
-              className="fill-white"
+              className="fill-white hover:fill-rose-300"
               role="img"
               width="24"
               height="20"
