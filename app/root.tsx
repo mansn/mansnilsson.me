@@ -1,4 +1,4 @@
-import type { MetaFunction, LinksFunction } from '@remix-run/node'
+import type { LinksFunction } from '@remix-run/node'
 import {
   Links,
   Meta,
@@ -11,16 +11,6 @@ import styles from './tailwind.css?url'
 import Footer from './shared/components/Footer'
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
-
-// export const meta: MetaFunction = () => {
-//   return [
-//     {
-//       charset: 'utf-8',
-//       title: 'Måns Nilsson',
-//       viewport: 'width=device-width,initial-scale=1',
-//     },
-//   ]
-// }
 
 export default function App() {
   return (
@@ -42,7 +32,7 @@ export default function App() {
       <head>
         <Links />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="charset" content="utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html;charset=utf-8" />
         <meta name="title" content="Måns Nilsson" />
         <Meta />
       </head>

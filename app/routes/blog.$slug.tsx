@@ -41,7 +41,9 @@ function PostHeader(props: { frontmatter: Frontmatter }) {
   return (
     <div className="flex flex-col">
       <h3 className="text-slate-500">{frontmatter.title}</h3>
-      <span className="text-slate-500 text-xs">Updated: {frontmatter.date}</span>
+      <span className="text-slate-500 text-xs">
+        Updated: {frontmatter.date}
+      </span>
     </div>
   )
 }

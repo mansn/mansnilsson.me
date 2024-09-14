@@ -14,13 +14,7 @@ type LoaderData = {
 }
 
 export async function loader() {
-  // TODO: Get intro markdown
   const posts = await getPosts()
-
-  /*
-   * Update the loader data to return the intro markdown and the list of blog posts
-   */
-
   const intro = await getIntro()
 
   const data = {
