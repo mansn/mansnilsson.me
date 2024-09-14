@@ -6,7 +6,11 @@ export default {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: 'MontSerrat',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

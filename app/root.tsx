@@ -27,7 +27,8 @@ export default function App() {
       prose-a:text-yellow-400
       prose-ul:text-slate-400
       container
-      mx-auto"
+      mx-auto
+      font-montserrat"
     >
       <head>
         <Links />
