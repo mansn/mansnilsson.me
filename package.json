@@ -7,7 +7,7 @@
     "build:css": "npm run generate:css -- --minify",
     "build:remix": "remix build",
     "dev": "remix vite:dev",
-    "start": "remix-serve ./build/server/index.js",
+    "start": "HOST=0.0.0.0 remix-serve ./build/server/index.js",
     "dev:css": "npm run generate:css -- --watch",
     "generate:css": "npx tailwindcss -o ./app/tailwind.css"
   },
