@@ -8,13 +8,9 @@
     "build:remix": "remix build",
     "dev": "remix vite:dev",
     "dev:css": "npm run generate:css -- --watch",
-    "generate:css": "npx tailwindcss -o ./app/tailwind.css",
-    "start": "netlify serve"
+    "generate:css": "npx tailwindcss -o ./app/tailwind.css"
   },
   "dependencies": {
-    "@netlify/functions": "^2.4.1",
-    "@netlify/remix-adapter": "^2.4.0",
-    "@netlify/remix-edge-adapter": "^3.1.0",
     "@remix-run/node": "^2.10.2",
     "@remix-run/react": "^2.10.2",
     "@remix-run/serve": "^2.10.2",
