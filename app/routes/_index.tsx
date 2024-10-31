@@ -1,17 +1,7 @@
-import { useLoaderData } from '@remix-run/react'
-import { json } from '@remix-run/node'
-import type { Frontmatter } from '~/utils/content.server'
-import { getIntro, getPosts } from '~/utils/content.server'
-import { useMemo } from 'react'
+import { json, useLoaderData } from '@remix-run/react'
 import { getMDXComponent } from 'mdx-bundler/client'
-
-type LoaderData = {
-  intro: string
-  posts: {
-    slug: string
-    frontmatter: Frontmatter
-  }[]
-}
+import { useMemo } from 'react'
+import { getIntro, getPosts } from '~/utils/content.server'
 
 export async function loader() {
   const posts = await getPosts()
@@ -24,36 +14,6 @@ export async function loader() {
   return json(data)
 }
 
-function ListOfBlogPosts() {
-  const data = useLoaderData<LoaderData>()
-
-  return (
-    <>
-      {data.posts.map((v) => {
-        return <BlogItem item={v} key={v.slug} />
-      })}
-    </>
-  )
-}
-
-function BlogItem(props: {
-  item: {
-    slug: string
-    frontmatter: Frontmatter
-  }
-}) {
-  const { item } = props
-  return (
-    <div className="blog-item">
-      <a href={`/blog/${item.slug}`}>
-        {' '}
-        <h3>{item.frontmatter.attributes.meta?.title ?? item.slug} </h3>
-      </a>
-      <p>{item.frontmatter.attributes.meta?.description}</p>
-    </div>
-  )
-}
-
 export default function Index() {
   const data = useLoaderData<typeof loader>()
   const { intro } = data
@@ -62,8 +22,15 @@ export default function Index() {
 
   return (
     <div className="leading-7">
+      <div className="flex align-center justify-center">
+        <img
+          className="max-h-52"
+          src="../images/me.png"
+          alt="Måns Nilsson in grayscale"
+        />
+        <h1 className="self-center ml-10">Måns Nilsson</h1>
+      </div>
       <Component />
-      <ListOfBlogPosts />
     </div>
   )
 }

@@ -1,68 +1,65 @@
-import { json, type LoaderFunction } from '@remix-run/server-runtime'
-import { useLoaderData } from '@remix-run/react'
-import { getMDXComponent } from 'mdx-bundler/client/index.js'
-import { useMemo } from 'react'
-import type { Frontmatter } from '~/utils/content.server'
+import { getMDXComponent } from 'mdx-bundler/client'
+import {
+  useLoaderData,
+  isRouteErrorResponse,
+  useRouteError,
+} from '@remix-run/react'
 import { getPost } from '~/utils/content.server'
-import type { MetaFunction } from '@remix-run/node'
-
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-  const frontmatter = data.frontmatter
-  const title = frontmatter.meta?.title ?? 'Måns Nilsson'
-  const description = frontmatter.meta?.description ?? undefined
-
-  return [
-    {
-      title,
-      description,
-      'og:twitter:title': title,
-      'og:twitter:description': description,
-    },
-  ]
-}
+import type { LoaderFunction } from '@remix-run/node'
+import { useMemo } from 'react'
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const { slug } = params
-  if (!slug) throw new Response('Not found', { status: 404 })
-
-  const post = await getPost(slug)
+  const slug = params.slug
+  const post = await getPost(slug!)
 
   if (!post) {
-    throw new Response('Not found', { status: 404 })
+    throw new Response('Not Found', { status: 404 })
   }
 
-  const { frontmatter, code } = post
-  return json({ frontmatter, code })
+  return { post }
 }
 
-function PostHeader(props: { frontmatter: Frontmatter }) {
-  const { frontmatter } = props
+export function ErrorBoundary() {
+  const error = useRouteError()
+
+  if (isRouteErrorResponse(error)) {
+    if (error.status === 404) {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          <h1 className="text-4xl font-bold">Post Not Found</h1>
+          <p className="mt-4">
+            Sorry, we couldn't find the post you're looking for.
+          </p>
+        </div>
+      )
+    }
+  }
 
   return (
-    <div className="flex flex-col">
-      <h3 className="text-slate-500">{frontmatter.title}</h3>
-      <span className="text-slate-500 text-xs">
-        Updated: {frontmatter.date}
-      </span>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-4xl font-bold">Oops!</h1>
+      <p className="mt-4">Something went wrong while loading this post.</p>
     </div>
   )
 }
 
-export default function Post() {
-  const { code, frontmatter } = useLoaderData<typeof loader>()
-  const Component = useMemo(() => getMDXComponent(code), [code])
+export default function BlogPost() {
+  const { post } = useLoaderData<typeof loader>()
 
-  return (
-    <>
-      <header>
-        <h6 className="text-slate-50">
-          <a className="" href="/">
-            Måns Nilsson
-          </a>
-        </h6>
-      </header>
-      <PostHeader frontmatter={frontmatter} />
-      <Component />
-    </>
-  )
+  const Component = useMemo(() => {
+    if (!post?.code) return null
+    return getMDXComponent(post.code)
+  }, [post?.code])
+
+  try {
+    return (
+      <article className="prose prose-invert mx-auto max-w-4xl">
+        <h1>{post.frontmatter.meta?.title}</h1>
+        {Component && <Component />}
+      </article>
+    )
+  } catch (error) {
+    console.error('Error rendering MDX:', error)
+    return <div>Error rendering content</div>
+  }
 }
