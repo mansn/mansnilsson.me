@@ -38,6 +38,7 @@ export default function App() {
         <Meta />
       </head>
       <body>
+        <header className="text-center text-white mb-5">Måns Nilsson</header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />

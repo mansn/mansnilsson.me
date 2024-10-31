@@ -1,20 +1,6 @@
-import parseFrontMatter from 'front-matter'
-import { readFile, readdir, access } from 'fs/promises'
-import path from 'path'
 import { bundleMDX } from 'mdx-bundler'
-
-async function fileExists(filename: string) {
-  try {
-    await access(filename)
-    return true
-  } catch (err) {
-    if (err.code === 'ENOENT') {
-      return false
-    } else {
-      throw err
-    }
-  }
-}
+import fs from 'fs/promises'
+import path from 'path'
 
 // The frontmatter can be any set of key values
 // But that's not especially useful to use
@@ -29,7 +15,6 @@ export type Frontmatter = {
 }
 
 const getMdx = async (source: string) => {
-  // Dynamically import all the rehype/remark plugins we are using
   const [rehypeHighlight, remarkGfm] = await Promise.all([
     import('rehype-highlight').then((mod) => mod.default),
     import('remark-gfm').then((mod) => mod.default),
@@ -38,16 +23,12 @@ const getMdx = async (source: string) => {
   const mdx = await bundleMDX<Frontmatter>({
     source,
     cwd: process.cwd(),
-
     esbuildOptions: (options) => {
-      // Configuration to allow image loading
-      // https://github.com/kentcdodds/mdx-bundler#image-bundling
       options.loader = {
         ...options.loader,
         '.png': 'dataurl',
         '.gif': 'dataurl',
       }
-
       return options
     },
     mdxOptions: (options) => {
@@ -64,12 +45,12 @@ const getMdx = async (source: string) => {
 }
 
 export async function getIntro() {
-  const filePath = path.join(process.cwd(), 'app', 'content', 'intro.mdx')
-  if (!(await fileExists(filePath))) return null
+  const data = await fs.readFile(
+    path.join(process.cwd(), 'app/content/posts/intro.mdx'),
+    'utf8'
+  )
 
-  const source = await readFile(filePath, 'utf-8')
-
-  const post = await getMdx(source)
+  const post = await getMdx(data)
 
   return {
     ...post,
@@ -85,18 +66,11 @@ export async function getIntro() {
  * @returns
  */
 export async function getPost(slug: string) {
-  const filePath = path.join(
-    process.cwd(),
-    'app',
-    'content',
-    'posts',
-    slug + '.mdx'
+  const data = await fs.readFile(
+    path.join(process.cwd(), `app/content/posts/${slug}.mdx`),
+    'utf8'
   )
-  if (!(await fileExists(filePath))) return null
-
-  const source = await readFile(filePath, 'utf-8')
-
-  const post = await getMdx(source)
+  const post = await getMdx(data)
 
   return {
     ...post,
@@ -111,26 +85,22 @@ export async function getPost(slug: string) {
  * @returns
  */
 export async function getPosts() {
-  const filePath = path.join(process.cwd(), 'app', 'content', 'posts')
+  const allPosts = await fs.readdir(
+    path.join(process.cwd(), 'app/content/posts')
+  )
 
-  const postsPath = await readdir(filePath, {
-    withFileTypes: true,
-  })
-
-  const posts = await Promise.all(
-    postsPath.map(async (dirent) => {
-      const fPath = path.join(filePath, dirent.name)
-      const [file] = await Promise.all([readFile(fPath)])
-      const frontmatter = parseFrontMatter(file.toString())
-      const attributes = frontmatter as Frontmatter
-
+  // Use Promise.all to wait for all async operations to complete
+  const mappedPosts = await Promise.all(
+    allPosts.map(async (postData) => {
+      const mdxResult = await getMdx(postData)
       return {
-        slug: dirent.name.replace(/\.mdx/, ''),
+        ...mdxResult,
         frontmatter: {
-          ...attributes,
+          ...mdxResult.frontmatter,
         },
       }
     })
   )
-  return posts
+
+  return mappedPosts
 }
