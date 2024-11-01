@@ -25,7 +25,7 @@ export default function Index() {
       <div className="flex align-center justify-center">
         <img
           className="max-h-52"
-          src="../images/me.png"
+          src="../images/me.webp"
           alt="Måns Nilsson in grayscale"
         />
         <h1 className="self-center ml-10">Måns Nilsson</h1>
