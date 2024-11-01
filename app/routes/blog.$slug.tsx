@@ -25,7 +25,7 @@ export function ErrorBoundary() {
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
       return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="font-bodyflex flex-col items-center justify-center min-h-screen">
           <h1 className="text-4xl font-bold">Post Not Found</h1>
           <p className="mt-4">
             Sorry, we couldn't find the post you're looking for.
@@ -36,7 +36,7 @@ export function ErrorBoundary() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="font-body flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-4xl font-bold">Oops!</h1>
       <p className="mt-4">Something went wrong while loading this post.</p>
     </div>
@@ -53,8 +53,8 @@ export default function BlogPost() {
 
   try {
     return (
-      <article className="prose prose-invert mx-auto max-w-4xl">
-        <h1>{post.frontmatter.meta?.title}</h1>
+      <article className="font-body prose max-w-4xl">
+        <h1 className='font-display'>{post.frontmatter.meta?.title}</h1>
         {Component && <Component />}
       </article>
     )

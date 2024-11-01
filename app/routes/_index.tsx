@@ -30,7 +30,9 @@ export default function Index() {
         />
         <h1 className="font-display self-center ml-10">Måns Nilsson</h1>
       </div>
-      <Component />
+      <div className="font-body">
+        <Component />
+      </div>
     </div>
   )
 }
