@@ -28,7 +28,7 @@ export default function Index() {
           src="../images/me.webp"
           alt="Måns Nilsson in grayscale"
         />
-        <h1 className="self-center ml-10">Måns Nilsson</h1>
+        <h1 className="font-display self-center ml-10">Måns Nilsson</h1>
       </div>
       <Component />
     </div>
