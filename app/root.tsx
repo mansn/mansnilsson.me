@@ -10,7 +10,15 @@ import {
 import styles from './tailwind.css?url'
 import Footer from './shared/components/Footer'
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: styles },
+  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+  { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+  {
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap',
+  },
+]
 
 export default function App() {
   return (
@@ -27,8 +35,7 @@ export default function App() {
       prose-a:text-yellow-400
       prose-ul:text-slate-400
       container
-      mx-auto
-      font-montserrat"
+      mx-auto"
     >
       <head>
         <Links />
@@ -38,7 +45,9 @@ export default function App() {
         <Meta />
       </head>
       <body>
-        <header className="text-center text-white mb-5">Måns Nilsson</header>
+        <header className="font-body text-center text-white mb-5">
+          Måns Nilsson
+        </header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
