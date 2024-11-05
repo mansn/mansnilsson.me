@@ -5,7 +5,7 @@ export default {
   theme: {
     fontFamily: {
       display: 'Nunito',
-      body: 'Quattrocento Sans',
+      body: 'Hind Siliguri',
     },
     container: {
       center: true,
