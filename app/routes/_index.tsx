@@ -22,15 +22,17 @@ export default function Index() {
 
   return (
     <div className="leading-7">
-      <div className="flex align-center justify-center">
+      <div className="flex align-center justify-center flex-row">
         <img
-          className="max-h-52"
+          className="max-h-32 lg:max-h-52 self-center"
           src="../images/me.webp"
           alt="Måns Nilsson in grayscale"
         />
-        <h1 className="font-display self-center ml-10">Måns Nilsson</h1>
+        <h1 className="font-display sm:block text-2xl lg:text-5xl ml-10 my-5 self-center">
+          Måns Nilsson
+        </h1>
       </div>
-      <div className="font-body">
+      <div className="container mx-auto mt-10 max-w-2xl">
         <Component />
       </div>
     </div>

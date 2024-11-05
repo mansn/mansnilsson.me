@@ -1,6 +1,5 @@
 import type { LinksFunction } from '@remix-run/node'
 import {
-  Link,
   Links,
   Meta,
   Outlet,
@@ -42,10 +41,10 @@ export default function App() {
         <meta name="title" content="Måns Nilsson" />
         <Meta />
       </head>
-      <body className="prose mx-auto">
-        <div className="flex flex-col justify-stretch">
-          <header className="not-prose font-body text-left text-white mb-5">
-            <Link className='hover:text-rose-300' to="/">Måns Nilsson</Link>
+      <body className="flex flex-col justify-center align-center">
+        <div className="mx-auto px-10">
+          <header className="font-body hidden lg:block text-left text-white mb-5">
+            Måns Nilsson
           </header>
           <Outlet />
           <ScrollRestoration />

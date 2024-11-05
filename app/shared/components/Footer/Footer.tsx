@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <footer className="w-800 my-auto mt-6 flex text-md justify-between">
+    <footer className="w-800 my-auto mt-10 flex text-md justify-between">
       <span className="text-slate-500">{`Måns Nilsson © ${new Date().getFullYear()}`}</span>
-      <ul className="flex gap-x-1">
+      <ul className="flex gap-x-4">
         <li className="list-none">
           <a
             className="linkedin"
@@ -11,8 +11,7 @@ export default function Footer() {
             <svg
               className="fill-white hover:fill-rose-300"
               role="img"
-              width="24"
-              height="20"
+              height="28"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -26,8 +25,7 @@ export default function Footer() {
             <svg
               className="fill-white hover:fill-rose-300"
               role="img"
-              width="24"
-              height="20"
+              height="28"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -41,8 +39,7 @@ export default function Footer() {
             <svg
               className="fill-white hover:fill-rose-300"
               role="img"
-              width="24"
-              height="20"
+              height="28"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
