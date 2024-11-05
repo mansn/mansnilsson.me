@@ -26,16 +26,13 @@ export default function App() {
       lang="en"
       className="
       bg-slate-950
-      prose
       lg:prose-md
       py-10
       prose-headings:text-white
       prose-p:text-slate-400
       prose-strong:text-slate-400
       prose-a:text-yellow-400
-      prose-ul:text-slate-400
-      container
-      mx-auto"
+      prose-ul:text-slate-400"
     >
       <head>
         <Links />
@@ -44,14 +41,16 @@ export default function App() {
         <meta name="title" content="Måns Nilsson" />
         <Meta />
       </head>
-      <body>
-        <header className="font-body text-center text-white mb-5">
-          Måns Nilsson
-        </header>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <Footer />
+      <body className="flex flex-col justify-center align-center">
+        <div className="mx-auto px-10">
+          <header className="font-body hidden lg:block text-left text-white mb-5">
+            Måns Nilsson
+          </header>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <Footer />
+        </div>
       </body>
     </html>
   )
