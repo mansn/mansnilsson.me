@@ -43,7 +43,7 @@ export default function App() {
       </head>
       <body className="flex flex-col justify-center align-center">
         <div className="mx-auto px-10">
-          <header className="font-body hidden lg:block text-left text-white mb-5">
+          <header className="font-body mb-32 lg:block text-left text-white ">
             Måns Nilsson
           </header>
           <Outlet />
