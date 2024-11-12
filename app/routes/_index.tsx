@@ -29,7 +29,15 @@ export default function Index() {
           alt="Måns Nilsson in grayscale"
         />
         <h1 className="font-display text-2xl lg:text-5xl ml-10 my-5 self-center">
-          Måns Nilsson
+          <span className="inline-block opacity-0 -translate-y-8 animate-dropIn [animation-delay:500ms]">
+            Måns
+          </span>
+          <span className="opacity-0 -translate-y-8 animate-dropIn [animation-delay:700ms]">
+            {' '}
+          </span>
+          <span className="inline-block opacity-0 -translate-y-8 animate-dropIn [animation-delay:700ms]">
+            Nilsson
+          </span>
         </h1>
       </div>
       <div className="container mx-auto mt-10 max-w-2xl">
