@@ -1,6 +1,6 @@
 import { json, useLoaderData } from '@remix-run/react'
 import { getMDXComponent } from 'mdx-bundler/client'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { getIntro, getPosts } from '~/utils/content.server'
 
 export async function loader() {
@@ -19,6 +19,7 @@ export default function Index() {
   const { intro } = data
   const code = intro?.code ?? ''
   const Component = useMemo(() => getMDXComponent(code), [code])
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   return (
     <div className="leading-7">
@@ -27,15 +28,39 @@ export default function Index() {
           className="max-h-32 lg:max-h-52 self-center"
           src="../images/me.webp"
           alt="Måns Nilsson in grayscale"
+          ref={(img) => {
+            // If image is already loaded (e.g., from cache), set state immediately
+            if (img?.complete) {
+              setImageLoaded(true)
+            }
+          }}
         />
         <h1 className="font-display text-2xl lg:text-5xl ml-10 my-5 self-center">
-          <span className="inline-block opacity-0 -translate-y-8 animate-dropIn [animation-delay:500ms]">
+          <span
+            className={`inline-block ${
+              imageLoaded
+                ? 'opacity-0 -translate-y-8 animate-dropIn [animation-delay:200ms]'
+                : 'opacity-0'
+            }`}
+          >
             Måns
           </span>
-          <span className="opacity-0 -translate-y-8 animate-dropIn [animation-delay:700ms]">
+          <span
+            className={
+              imageLoaded
+                ? 'opacity-0 -translate-y-8 animate-dropIn [animation-delay:400ms]'
+                : 'opacity-0'
+            }
+          >
             {' '}
           </span>
-          <span className="inline-block opacity-0 -translate-y-8 animate-dropIn [animation-delay:700ms]">
+          <span
+            className={`inline-block ${
+              imageLoaded
+                ? 'opacity-0 -translate-y-8 animate-dropIn [animation-delay:400ms]'
+                : 'opacity-0'
+            }`}
+          >
             Nilsson
           </span>
         </h1>
