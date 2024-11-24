@@ -28,6 +28,7 @@ export default function Index() {
           className="max-h-32 lg:max-h-52 self-center"
           src="../images/me.webp"
           alt="Måns Nilsson in grayscale"
+          onLoad={() => setImageLoaded(true)}
           ref={(img) => {
             // If image is already loaded (e.g., from cache), set state immediately
             if (img?.complete) {
