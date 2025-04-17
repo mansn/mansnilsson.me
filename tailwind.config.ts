@@ -13,20 +13,21 @@ export default {
     extend: {
       keyframes: {
         dropIn: {
-          '0%': { 
+          '0%': {
             opacity: '0',
-            transform: 'translate3d(0, -32px, 0)'
+            transform: 'translate3d(0, -32px, 0)',
           },
-          '100%': { 
+          '100%': {
             opacity: '1',
-            transform: 'translate3d(0, 0, 0)'
-          }
-        }
+            transform: 'translate3d(0, 0, 0)',
+          },
+        },
       },
       animation: {
-        dropIn: 'dropIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
-      }
-    }
+        dropIn: 'dropIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+        fadeIn: 'fadeIn 3 ease-in forwards',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

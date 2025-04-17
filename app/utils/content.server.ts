@@ -1,16 +1,15 @@
-import { bundleMDX } from 'mdx-bundler'
 import fs from 'fs/promises'
 import path from 'path'
+import { bundleMDX } from 'mdx-bundler'
 
 // The frontmatter can be any set of key values
 // But that's not especially useful to use
 // So we'll declare our own set of properties that we are going to expect to exist
 export type Frontmatter = {
-  attributes: {
-    meta?: {
-      title?: string
-      description?: string
-    }
+  meta?: {
+    post?: string
+    date?: string
+    title?: string
   }
 }
 
@@ -46,7 +45,7 @@ const getMdx = async (source: string) => {
 
 export async function getIntro() {
   const data = await fs.readFile(
-    path.join(process.cwd(), 'app/content/posts/intro.mdx'),
+    path.join(process.cwd(), 'app/content/intro.mdx'),
     'utf8'
   )
 
@@ -80,24 +79,20 @@ export async function getPost(slug: string) {
   }
 }
 
-/**
- * Get all frontmatter for all posts
- * @returns
- */
 export async function getPosts() {
   const allPosts = await fs.readdir(
     path.join(process.cwd(), 'app/content/posts')
   )
 
-  // Use Promise.all to wait for all async operations to complete
   const mappedPosts = await Promise.all(
-    allPosts.map(async (postData) => {
+    allPosts.map(async (fileName) => {
+      const postData = await fs.readFile(
+        path.join(process.cwd(), `app/content/posts/${fileName}`),
+        'utf8'
+      )
       const mdxResult = await getMdx(postData)
       return {
         ...mdxResult,
-        frontmatter: {
-          ...mdxResult.frontmatter,
-        },
       }
     })
   )
