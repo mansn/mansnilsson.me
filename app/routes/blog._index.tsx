@@ -21,29 +21,25 @@ export function ErrorBoundary() {
 export default function BlogPosts() {
   const { posts } = useLoaderData<typeof loader>()
 
-  console.log('posts -->', posts)
   try {
     return (
       <>
         <Header />
-        <article className="font-body prose max-w-4xl mt-16">
-          <ul>
-            {posts.map((post) => {
-              console.log('post -->', post)
-              return (
-                <li key={post.frontmatter.meta?.title} className="flex">
-                  <Link
-                    to={`/blog/${post.frontmatter.meta?.post}`}
-                    className="flex-1 mt-0"
-                  >
-                    {post.frontmatter.meta?.title}
-                  </Link>
-                  <time>{post.frontmatter.meta?.date}</time>
-                </li>
-              )
-            })}
+        <div className="font-body prose max-w-4xl mt-16">
+          <ul className="pl-0">
+            {posts.map((post) => (
+              <li key={post.frontmatter.meta?.title} className="flex pl-0">
+                <Link
+                  to={`/blog/${post.frontmatter.meta?.post}`}
+                  className="flex-1 mt-0"
+                >
+                  {post.frontmatter.meta?.title}
+                </Link>
+                <time>{post.frontmatter.meta?.date}</time>
+              </li>
+            ))}
           </ul>
-        </article>
+        </div>
       </>
     )
   } catch (error) {

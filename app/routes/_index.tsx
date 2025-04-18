@@ -29,8 +29,8 @@ export default function Index() {
   return (
     <div className="leading-7">
       <Header />
-      <div className="flex align-center justify-center flex-row mt-32">
-        <h1 className="font-display text-4xl lg:text-5xl ml-10 my-5 self-center">
+      <div className="flex align-center justify-center flex-row my-28">
+        <h1 className="font-display text-4xl lg:text-5xl self-center">
           <span
             className={`inline-block ${
               mounted
