@@ -7,6 +7,7 @@ import {
 import { getPost } from '~/utils/content.server'
 import type { LoaderFunction } from '@remix-run/node'
 import { useMemo } from 'react'
+import { Header } from '~/components/Header'
 
 export const loader: LoaderFunction = async ({ params }) => {
   const slug = params.slug
@@ -53,10 +54,13 @@ export default function BlogPost() {
 
   try {
     return (
-      <article className="font-body prose max-w-4xl">
-        <h1 className='font-display'>{post.frontmatter.meta?.title}</h1>
-        {Component && <Component />}
-      </article>
+      <>
+        <Header />
+        <article className="font-body prose max-w-4xl mt-16">
+          <h1 className="font-display">{post.frontmatter.meta?.title}</h1>
+          {Component && <Component />}
+        </article>
+      </>
     )
   } catch (error) {
     console.error('Error rendering MDX:', error)
