@@ -33,7 +33,7 @@ export default function BlogPosts() {
               return (
                 <li key={post.frontmatter.meta?.title} className="flex">
                   <Link
-                    to={`/blog/${post.frontmatter.meta?.title}`}
+                    to={`/blog/${post.frontmatter.meta?.post}`}
                     className="flex-1 mt-0"
                   >
                     {post.frontmatter.meta?.title}
