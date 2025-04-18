@@ -8,6 +8,7 @@ function PosthogInit() {
     posthog.init('phc_W09Kgul74R645XHwzslTTnrBeQ83hOEjaqJc44LEDJ9', {
       api_host: 'https://eu.i.posthog.com',
       person_profiles: 'always',
+      persistence: 'memory',
     })
   }, [])
 
