@@ -9,6 +9,7 @@ import {
 
 import styles from './tailwind.css?url'
 import Footer from './shared/components/Footer'
+import { Header } from './components/Header'
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
@@ -42,15 +43,14 @@ export default function App() {
         <Meta />
       </head>
       <body
-        style={{ width: '75ch' }}
+        style={{ width: '75ch', maxWidth: '100%', padding: '0 1rem' }}
         className="flex flex-col justify-center align-center m-auto"
       >
-        <div className="m-auto px-10">
-          <Outlet />
-          <ScrollRestoration />
-          <Scripts />
-          <Footer />
-        </div>
+        <Header />
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <Footer />
       </body>
     </html>
   )

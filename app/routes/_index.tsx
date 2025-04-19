@@ -1,7 +1,6 @@
 import { useLoaderData } from '@remix-run/react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { useEffect, useMemo, useState } from 'react'
-import { Header } from '~/components/Header'
 import { getIntro, getPosts } from '~/utils/content.server'
 
 export async function loader() {
@@ -27,8 +26,7 @@ export default function Index() {
   }, [])
 
   return (
-    <div className="leading-7">
-      <Header />
+    <main className="leading-7">
       <div className="flex align-center justify-center flex-row my-28">
         <h1 className="font-display text-4xl lg:text-5xl self-center">
           <span
@@ -60,9 +58,9 @@ export default function Index() {
           </span>
         </h1>
       </div>
-      <div className="container m-auto mt-10 max-w-2xl">
+      <div className="container m-auto mt-10">
         <Component />
       </div>
-    </div>
+    </main>
   )
 }
