@@ -1,5 +1,4 @@
 import { Link, useLoaderData } from '@remix-run/react'
-import { Header } from '~/components/Header'
 import { getPosts } from '~/utils/content.server'
 
 export async function loader() {
