@@ -24,7 +24,6 @@ export default function BlogPosts() {
   try {
     return (
       <>
-        <Header />
         <div className="font-body prose max-w-4xl mt-16">
           <ul className="pl-0">
             {posts.map((post) => (

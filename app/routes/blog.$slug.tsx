@@ -54,13 +54,10 @@ export default function BlogPost() {
 
   try {
     return (
-      <>
-        <Header />
-        <article className="font-body prose max-w-4xl mt-16">
-          <h1 className="font-display">{post.frontmatter.meta?.title}</h1>
-          {Component && <Component />}
-        </article>
-      </>
+      <article className="font-body prose max-w-4xl mt-16">
+        <h1 className="font-display">{post.frontmatter.meta?.title}</h1>
+        {Component && <Component />}
+      </article>
     )
   } catch (error) {
     console.error('Error rendering MDX:', error)
