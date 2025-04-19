@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
     <header
-      style={{ width: '75ch' }}
+      style={{ width: '75ch', maxWidth: '100%' }}
       className="font-body text-left text-white flex justify-between"
     >
       <nav className="flex gap-x-4">
