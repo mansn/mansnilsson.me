@@ -7,7 +7,6 @@ import {
 import { getPost } from '~/utils/content.server'
 import type { LoaderFunction } from '@remix-run/node'
 import { useMemo } from 'react'
-import { Header } from '~/components/Header'
 
 export const loader: LoaderFunction = async ({ params }) => {
   const slug = params.slug
