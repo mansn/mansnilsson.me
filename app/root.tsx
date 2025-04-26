@@ -8,8 +8,8 @@ import {
 } from '@remix-run/react'
 
 import styles from './tailwind.css?url'
-import Footer from './shared/components/Footer'
 import { Header } from './components/Header'
+import Footer from './components/Footer'
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
