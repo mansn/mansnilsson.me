@@ -6,13 +6,12 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
-
-import styles from './tailwind.css?url'
+import { styled } from '@linaria/react'
+import { globalStyles } from './styles/global'
 import Footer from './shared/components/Footer'
 import { Header } from './components/Header'
 
 export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: styles },
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
   {
@@ -21,20 +20,14 @@ export const links: LinksFunction = () => [
   },
 ]
 
+const Body = styled.body`
+  display: flex;
+  flex-direction: column;
+`
+
 export default function App() {
   return (
-    <html
-      lang="en"
-      className="
-      bg-slate-950
-      lg:prose-md
-      py-10
-      prose-headings:text-white
-      prose-p:text-slate-400
-      prose-strong:text-slate-400
-      prose-a:text-yellow-400
-      prose-ul:text-slate-400"
-    >
+    <html lang="en" className={globalStyles}>
       <head>
         <Links />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,16 +35,13 @@ export default function App() {
         <meta name="title" content="Måns Nilsson" />
         <Meta />
       </head>
-      <body
-        style={{ width: '75ch', maxWidth: '100%', padding: '0 1rem' }}
-        className="flex flex-col justify-center align-center m-auto"
-      >
+      <Body>
         <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <Footer />
-      </body>
+      </Body>
     </html>
   )
 }

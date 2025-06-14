@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from '@remix-run/react'
+import { styled } from '@linaria/react'
 import { getPosts } from '~/utils/content.server'
 
 export async function loader() {
@@ -6,14 +7,33 @@ export async function loader() {
   return { posts }
 }
 
+const Container = styled.div`
+  font-family: 'Hind Siliguri', sans-serif;
+  width: 100%;
+  margin-top: 4rem;
+`
+
+const PostList = styled.ul`
+  padding-left: 0;
+`
+
+const PostItem = styled.li`
+  display: flex;
+  padding-left: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+`
+
+const PostLink = styled(Link)`
+  flex: 1;
+`
+
 export function ErrorBoundary() {
   return (
-    <div className="font-body flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-4xl font-bold">Oops!</h1>
-      <p className="mt-4">
-        Sorry, something went wrong while loading the blog posts.
-      </p>
-    </div>
+    <Container>
+      <h1>Oops!</h1>
+      <p>Sorry, something went wrong while loading the blog posts.</p>
+    </Container>
   )
 }
 
@@ -22,23 +42,18 @@ export default function BlogPosts() {
 
   try {
     return (
-      <>
-        <div className="font-body prose max-w-4xl mt-16">
-          <ul className="pl-0">
-            {posts.map((post) => (
-              <li key={post.frontmatter.meta?.title} className="flex pl-0">
-                <Link
-                  to={`/blog/${post.frontmatter.meta?.post}`}
-                  className="flex-1 mt-0"
-                >
-                  {post.frontmatter.meta?.title}
-                </Link>
-                <time>{post.frontmatter.meta?.date}</time>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </>
+      <Container>
+        <PostList>
+          {posts.map((post) => (
+            <PostItem key={post.frontmatter.meta?.title}>
+              <PostLink to={`/blog/${post.frontmatter.meta?.post}`}>
+                {post.frontmatter.meta?.title}
+              </PostLink>
+              <time>{post.frontmatter.meta?.date}</time>
+            </PostItem>
+          ))}
+        </PostList>
+      </Container>
     )
   } catch (error) {
     console.error('Error rendering MDX:', error)

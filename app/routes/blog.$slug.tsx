@@ -7,6 +7,7 @@ import {
 import { getPost } from '~/utils/content.server'
 import type { LoaderFunction } from '@remix-run/node'
 import { useMemo } from 'react'
+import { styled } from '@linaria/react'
 
 export const loader: LoaderFunction = async ({ params }) => {
   const slug = params.slug
@@ -19,27 +20,49 @@ export const loader: LoaderFunction = async ({ params }) => {
   return { post }
 }
 
+const Container = styled.div`
+  font-family: 'Hind Siliguri', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+const Title = styled.h1`
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+`
+
+const Article = styled.article`
+  font-family: 'Hind Siliguri', sans-serif;
+  max-width: 56rem;
+  margin-top: 4rem;
+
+  h1 {
+    font-family: 'Nunito', sans-serif;
+  }
+`
+
 export function ErrorBoundary() {
   const error = useRouteError()
 
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
       return (
-        <div className="font-bodyflex flex-col items-center justify-center min-h-screen">
-          <h1 className="text-4xl font-bold">Post Not Found</h1>
-          <p className="mt-4">
-            Sorry, we couldn't find the post you're looking for.
-          </p>
-        </div>
+        <Container>
+          <Title>Post Not Found</Title>
+          <p>Sorry, we couldn't find the post you're looking for.</p>
+        </Container>
       )
     }
   }
 
   return (
-    <div className="font-body flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-4xl font-bold">Oops!</h1>
-      <p className="mt-4">Something went wrong while loading this post.</p>
-    </div>
+    <Container>
+      <Title>Oops!</Title>
+      <p>Something went wrong while loading this post.</p>
+    </Container>
   )
 }
 
@@ -53,10 +76,10 @@ export default function BlogPost() {
 
   try {
     return (
-      <article className="font-body prose max-w-4xl mt-16">
-        <h1 className="font-display">{post.frontmatter.meta?.title}</h1>
+      <Article>
+        <h1>{post.frontmatter.meta?.title}</h1>
         {Component && <Component />}
-      </article>
+      </Article>
     )
   } catch (error) {
     console.error('Error rendering MDX:', error)
