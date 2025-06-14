@@ -2,6 +2,10 @@ import { css } from '@linaria/core'
 
 export const globalStyles = css`
   :global() {
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     html {
       background-color: #020617; /* slate-950 */
       padding-top: 2.5rem;
@@ -14,7 +18,7 @@ export const globalStyles = css`
         
 
     body {
-      width: 75ch;
+      width: min(75ch, 100%);
       max-width: 100%;
       padding: 0 1rem;
       display: flex;
