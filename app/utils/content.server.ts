@@ -97,5 +97,11 @@ export async function getPosts() {
     })
   )
 
-  return mappedPosts
+  const sortedPosts = mappedPosts.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.meta?.date || 0)
+    const dateB = new Date(b.frontmatter.meta?.date || 0)
+    return dateB.getTime() - dateA.getTime()
+  })
+
+  return sortedPosts
 }
