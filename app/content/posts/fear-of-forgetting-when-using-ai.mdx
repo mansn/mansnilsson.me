@@ -1,0 +1,24 @@
+---
+  post: '/fear-of-forgetting-when-using-ai'
+  date: '2025-02-26'
+  title: 'Fear of forgetting when using AI'
+---
+
+I've been using AI assistants for at least a year now. Mostly Github Copilot, but also Cursor on private projects.
+
+One thing I fear, and I believe others do as well, is forgetting how to code without an AI assistant.
+I'm not sure if I'm wasting energy worrying about this, because I also feel like coding with an AI assistant will be the de-facto standard wherever you go in the future.
+
+I mainly use AI assistants for tab completion, smart rewrites, multi-line edits and helping me figuring out errors, or learning new things. 
+It is really nice to have it available to ask questions and get customized answers returned, compared to googling it and trying to find a matching thread on Stackoverflow. 
+Sure, I've done been using multi cursor editing or vim's substitute command for some of these tasks before, but I've found Cursor doing it pretty much as fast as well.
+I've also asked for suggestions on how to solve tasks that are new to me (e.g. tailored examples using Web Audio API). But I've rarely used the solutions without rewriting them a bit.
+
+Anyway, I think I'll be switching between Cursor and VSCode without AI assistant for some time. For my own sanity.
+But in the long run I think I'll be using Cursor as my "daily driver" and tweak it to be "just as helpful" as I want it to be.
+
+Oh btw, I disabled Cursor for MDX files. This doesn't really have to be an MDX file though.
+I didn't want to disable it completely for MDX, but I wasn't able to create a cursor rule to have it help me with spelling mistakes or typos, and not predict whole sentences (that's really annoying).
+I specifically gave this content (among some other things) in my `rules.mdc` file:
+> - Don't autocomplete sentences in markdown (.md or .mdx) files. You can point out spelling errors, but I want to think about _what_ to write on my own.
+But it just kept on predicting sentences anyway. So I ended up disabling it for MDX.
