@@ -4,6 +4,11 @@ import { useEffect, useMemo, useState } from 'react'
 import { styled } from '@linaria/react'
 import { css } from '@linaria/core'
 import { getIntro, getPosts } from '~/utils/content.server'
+import StyledLink from '~/shared/components/Link'
+
+const mdxComponents = {
+  a: StyledLink,
+}
 
 export async function loader() {
   const posts = await getPosts()
@@ -46,7 +51,7 @@ const dropInAnimation = css`
   animation: dropIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 
   @keyframes dropIn {
-   to {
+    to {
       opacity: 1;
       transform: translate3d(0, 0, 0);
     }
@@ -75,7 +80,11 @@ export default function Index() {
         <Title>
           <span
             className={mounted ? dropInAnimation : ''}
-            style={{ display: 'inline-block', animationDelay: '200ms', opacity: '0' }}
+            style={{
+              display: 'inline-block',
+              animationDelay: '200ms',
+              opacity: '0',
+            }}
           >
             Måns
           </span>
@@ -87,14 +96,18 @@ export default function Index() {
           </span>
           <span
             className={mounted ? dropInAnimation : ''}
-            style={{ display: 'inline-block', animationDelay: '400ms', opacity: '0' }}
+            style={{
+              display: 'inline-block',
+              animationDelay: '400ms',
+              opacity: '0',
+            }}
           >
             Nilsson
           </span>
         </Title>
       </HeroContainer>
       <Content>
-        <Component />
+        <Component components={mdxComponents} />
       </Content>
     </MainContainer>
   )

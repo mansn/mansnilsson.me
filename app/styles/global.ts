@@ -2,7 +2,9 @@ import { css } from '@linaria/core'
 
 export const globalStyles = css`
   :global() {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
@@ -15,7 +17,6 @@ export const globalStyles = css`
       font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
         'Segoe UI Emoji', Segoe UI Symbol, 'Noto Color Emoji';
     }
-        
 
     body {
       width: min(75ch, 100%);
@@ -58,10 +59,29 @@ export const globalStyles = css`
       text-decoration: none;
       color: #facc15; /* yellow-400 */
     }
-    
-    a:hover {
-      text-decoration: underline;
-      color: #fbbf24; /* yellow-500 */
+
+    .link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      padding-bottom: 2px; /* space for underline */
+    }
+
+    .link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    .link:hover::after {
+      transform: scaleX(1);
     }
 
     ul {

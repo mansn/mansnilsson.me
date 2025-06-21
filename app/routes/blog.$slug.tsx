@@ -8,6 +8,11 @@ import { getPost } from '~/utils/content.server'
 import type { LoaderFunction } from '@remix-run/node'
 import { useMemo } from 'react'
 import { styled } from '@linaria/react'
+import StyledLink from '~/shared/components/Link'
+
+const mdxComponents = {
+  a: StyledLink,
+}
 
 export const loader: LoaderFunction = async ({ params }) => {
   const slug = params.slug
@@ -78,7 +83,7 @@ export default function BlogPost() {
     return (
       <Article>
         <h1>{post.frontmatter.meta?.title}</h1>
-        {Component && <Component />}
+        {Component && <Component components={mdxComponents} />}
       </Article>
     )
   } catch (error) {
