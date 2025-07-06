@@ -3,7 +3,7 @@ import { vitePlugin as remix } from '@remix-run/dev'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import remarkFrontmatter from 'remark-frontmatter'
-import wyw from '@wyw-in-js/vite';
+import wyw from '@wyw-in-js/vite'
 
 export default defineConfig({
   plugins: [
@@ -11,16 +11,20 @@ export default defineConfig({
       remarkPlugins: [remarkFrontmatter],
     }),
     remix({
-      ignoredRouteFiles: ["**/*.css"],
+      ignoredRouteFiles: ['**/*.css'],
       future: {
-        unstable_optimizeDeps: true,
+        v3_fetcherPersist: true,
       },
     }),
     tsconfigPaths(),
     wyw({
       include: ['**/*.{ts,tsx}'],
       babelOptions: {
-        presets: ['@babel/preset-typescript', '@babel/preset-react', '@wyw-in-js/babel-preset'],
+        presets: [
+          '@babel/preset-typescript',
+          '@babel/preset-react',
+          '@wyw-in-js/babel-preset',
+        ],
       },
     }),
   ],
