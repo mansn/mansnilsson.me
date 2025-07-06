@@ -25,7 +25,6 @@ const PostItem = styled.li`
   display: flex;
   padding-left: 0;
   margin-top: 1em;
-  margin-bottom: 1em;
 `
 
 const PostLink = styled(Link)`
