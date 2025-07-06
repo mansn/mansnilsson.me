@@ -1,4 +1,4 @@
-import { useLoaderData } from '@remix-run/react'
+import { useLoaderData } from 'react-router';
 import { getMDXComponent } from 'mdx-bundler/client'
 import { useEffect, useMemo, useState } from 'react'
 import { styled } from '@linaria/react'
