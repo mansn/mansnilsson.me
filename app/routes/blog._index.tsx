@@ -1,6 +1,7 @@
-import { Link, useLoaderData } from '@remix-run/react'
+import { useLoaderData } from '@remix-run/react'
 import { styled } from '@linaria/react'
 import { getPosts } from '~/utils/content.server'
+import Link from '~/shared/components/Link'
 
 export async function loader() {
   const posts = await getPosts()
@@ -14,6 +15,9 @@ const Container = styled.div`
 `
 
 const PostList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
   padding-left: 0;
 `
 
@@ -21,7 +25,6 @@ const PostItem = styled.li`
   display: flex;
   padding-left: 0;
   margin-top: 1em;
-  margin-bottom: 1em;
 `
 
 const PostLink = styled(Link)`
@@ -47,7 +50,7 @@ export default function BlogPosts() {
           {posts.map((post) => (
             <PostItem key={post.frontmatter.meta?.title}>
               <PostLink to={`/blog/${post.frontmatter.meta?.post}`}>
-                {post.frontmatter.meta?.title}
+                <span>{post.frontmatter.meta?.title}</span>
               </PostLink>
               <time>{post.frontmatter.meta?.date}</time>
             </PostItem>

@@ -1,4 +1,5 @@
 import { styled } from '@linaria/react'
+import Link from '../Link'
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -32,10 +33,10 @@ const SocialIcon = styled.svg`
 `
 
 const NavLink = styled.a`
-  color: white; 
+  color: white;
 `
 
-export const Header = () => {
+export default function Header() {
   return (
     <HeaderContainer style={{ maxWidth: '100%' }}>
       <Nav>

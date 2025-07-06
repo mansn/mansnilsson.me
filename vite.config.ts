@@ -10,7 +10,12 @@ export default defineConfig({
     mdx({
       remarkPlugins: [remarkFrontmatter],
     }),
-    remix(),
+    remix({
+      ignoredRouteFiles: ["**/*.css"],
+      future: {
+        unstable_optimizeDeps: true,
+      },
+    }),
     tsconfigPaths(),
     wyw({
       include: ['**/*.{ts,tsx}'],

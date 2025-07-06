@@ -9,7 +9,7 @@ import {
 import { styled } from '@linaria/react'
 import { globalStyles } from './styles/global'
 import Footer from './shared/components/Footer'
-import { Header } from './components/Header'
+import Header from './shared/components/Header'
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
