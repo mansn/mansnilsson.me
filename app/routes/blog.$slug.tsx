@@ -1,11 +1,7 @@
 import { getMDXComponent } from 'mdx-bundler/client'
-import {
-  useLoaderData,
-  isRouteErrorResponse,
-  useRouteError,
-} from '@remix-run/react'
+import { useLoaderData, isRouteErrorResponse, useRouteError } from 'react-router';
 import { getPost } from '~/utils/content.server'
-import type { LoaderFunction } from '@remix-run/node'
+import type { LoaderFunction } from 'react-router';
 import { useMemo } from 'react'
 import { styled } from '@linaria/react'
 import StyledLink from '~/shared/components/Link'
