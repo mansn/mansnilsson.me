@@ -1,7 +1,11 @@
 import { getMDXComponent } from 'mdx-bundler/client'
-import { useLoaderData, isRouteErrorResponse, useRouteError } from 'react-router';
+import {
+  useLoaderData,
+  isRouteErrorResponse,
+  useRouteError,
+} from 'react-router'
 import { getPost } from '~/utils/content.server'
-import type { LoaderFunction } from 'react-router';
+import type { LoaderFunction } from 'react-router'
 import { useMemo } from 'react'
 import { styled } from '@linaria/react'
 import StyledLink from '~/shared/components/Link'
@@ -39,10 +43,6 @@ const Article = styled.article`
   font-family: 'Hind Siliguri', sans-serif;
   max-width: 56rem;
   margin-top: 4rem;
-
-  h1 {
-    font-family: 'Nunito', sans-serif;
-  }
 `
 
 export function ErrorBoundary() {
@@ -78,7 +78,7 @@ export default function BlogPost() {
   try {
     return (
       <Article>
-        <h1>{post.frontmatter.meta?.title}</h1>
+        <Title>{post.frontmatter.meta?.title}</Title>
         {Component && <Component components={mdxComponents} />}
       </Article>
     )

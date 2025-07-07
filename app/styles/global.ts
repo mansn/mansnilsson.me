@@ -14,8 +14,7 @@ export const globalStyles = css`
       padding-bottom: 2.5rem;
       line-height: 1.5;
       tab-size: 4;
-      font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', Segoe UI Symbol, 'Noto Color Emoji';
+      font-family: 'Hind Siliguri', sans-serif;
     }
 
     body {
@@ -35,20 +34,16 @@ export const globalStyles = css`
     h4,
     h5,
     h6 {
+      font-family: 'Nunito', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol,
+        'Noto Color Emoji';
       color: white;
       margin: 0;
     }
 
     p {
-      font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', Segoe UI Symbol, 'Noto Color Emoji';
       color: #94a3b8; /* slate-400 */
-    }
-
-    span {
-      font-family: 'Nunito', ui-sans-serif, system-ui, sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol,
-        'Noto Color Emoji';
+      font-size: 1.125rem;
     }
 
     strong {

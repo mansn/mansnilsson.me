@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router';
+import { useLoaderData } from 'react-router'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { useEffect, useMemo, useState } from 'react'
 import { styled } from '@linaria/react'
@@ -34,7 +34,6 @@ const HeroContainer = styled.div`
 `
 
 const Title = styled.h1`
-  font-family: 'Nunito', sans-serif;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 400;
