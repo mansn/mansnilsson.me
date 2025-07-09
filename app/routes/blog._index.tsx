@@ -11,7 +11,6 @@ export async function loader() {
 const Container = styled.div`
   font-family: 'Nunito', sans-serif;
   width: 100%;
-  margin-top: 4rem;
 `
 
 const PostList = styled.ul`
