@@ -14,7 +14,7 @@ export const globalStyles = css`
       padding-bottom: 2.5rem;
       line-height: 1.5;
       tab-size: 4;
-      font-family: 'Hind Siliguri', sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
 
     body {

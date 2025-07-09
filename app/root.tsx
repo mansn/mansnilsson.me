@@ -1,5 +1,5 @@
-import type { LinksFunction } from 'react-router';
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
+import type { LinksFunction } from 'react-router'
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
 import { styled } from '@linaria/react'
 import { globalStyles } from './styles/global'
 import Footer from './shared/components/Footer'
@@ -10,7 +10,7 @@ export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
   {
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap',
+    href: 'https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap',
   },
 ]
 

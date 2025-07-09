@@ -3,11 +3,12 @@ import Link from '../Link'
 
 const HeaderContainer = styled.header`
   width: 100%;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: 'Nunito', sans-serif;
   text-align: left;
   color: white;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 4rem;
 `
 
 const Nav = styled.nav`

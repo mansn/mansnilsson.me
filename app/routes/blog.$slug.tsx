@@ -5,7 +5,7 @@ import {
   useRouteError,
 } from 'react-router'
 import { getPost } from '~/utils/content.server'
-import type { LoaderFunction } from 'react-router'
+import type { LoaderFunctionArgs } from 'react-router'
 import { useMemo } from 'react'
 import { styled } from '@linaria/react'
 import StyledLink from '~/shared/components/Link'
@@ -14,19 +14,21 @@ const mdxComponents = {
   a: StyledLink,
 }
 
-export const loader: LoaderFunction = async ({ params }) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
   const slug = params.slug
-  const post = await getPost(slug!)
+  if (!slug) throw new Response('Not Found', { status: 404 })
+
+  const post = await getPost(slug)
 
   if (!post) {
     throw new Response('Not Found', { status: 404 })
   }
 
-  return { post }
+  return post
 }
 
 const Container = styled.div`
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,15 +36,14 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   line-height: 2.5rem;
   font-weight: 700;
 `
 
 const Article = styled.article`
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: 'Roboto', sans-serif;
   max-width: 56rem;
-  margin-top: 4rem;
 `
 
 export function ErrorBoundary() {
@@ -68,10 +69,10 @@ export function ErrorBoundary() {
 }
 
 export default function BlogPost() {
-  const { post } = useLoaderData<typeof loader>()
+  const post = useLoaderData<typeof loader>()
 
   const Component = useMemo(() => {
-    if (!post?.code) return null
+    if (!post.code) return null
     return getMDXComponent(post.code)
   }, [post?.code])
 
