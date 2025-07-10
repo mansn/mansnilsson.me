@@ -4,11 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "build:css": "npm run generate:css -- --minify",
     "dev": "react-router dev",
     "start": "HOST=0.0.0.0 react-router-serve /build/server/index.js",
-    "dev:css": "npm run generate:css -- --watch",
-    "generate:css": "npx tailwindcss -o ./app/tailwind.css",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
