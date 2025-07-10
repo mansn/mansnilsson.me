@@ -4,17 +4,13 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "build:css": "npm run generate:css -- --minify",
     "dev": "react-router dev",
     "start": "HOST=0.0.0.0 react-router-serve /build/server/index.js",
-    "dev:css": "npm run generate:css -- --watch",
-    "generate:css": "npx tailwindcss -o ./app/tailwind.css",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
     "@linaria/core": "^6.3.0",
     "@linaria/react": "^6.3.0",
-    "@linaria/vite": "^5.0.4",
     "@react-router/fs-routes": "^7.6.3",
     "@react-router/node": "^7.0.0",
     "@react-router/serve": "^7.0.0",
