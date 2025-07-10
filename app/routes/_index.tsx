@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router';
+import { useLoaderData } from 'react-router'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { useEffect, useMemo, useState } from 'react'
 import { styled } from '@linaria/react'
@@ -31,11 +31,11 @@ const HeroContainer = styled.div`
   justify-content: center;
   flex-direction: row;
   margin: 7rem 0;
+  margin-top: 2rem;
 `
 
 const Title = styled.h1`
-  font-family: 'Nunito', sans-serif;
-  font-size: 2.25rem;
+  font-size: 4.25rem;
   line-height: 2.5rem;
   font-weight: 400;
   align-self: center;
@@ -56,11 +56,6 @@ const dropInAnimation = css`
       transform: translate3d(0, 0, 0);
     }
   }
-`
-
-const Content = styled.div`
-  margin: 0 auto;
-  margin-top: 2.5rem;
 `
 
 export default function Index() {
@@ -106,9 +101,7 @@ export default function Index() {
           </span>
         </Title>
       </HeroContainer>
-      <Content>
-        <Component components={mdxComponents} />
-      </Content>
+      <Component components={mdxComponents} />
     </MainContainer>
   )
 }

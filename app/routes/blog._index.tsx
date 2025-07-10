@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router';
+import { useLoaderData, type LinkProps } from 'react-router'
 import { styled } from '@linaria/react'
 import { getPosts } from '~/utils/content.server'
 import Link from '~/shared/components/Link'
@@ -9,9 +9,8 @@ export async function loader() {
 }
 
 const Container = styled.div`
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: 'Nunito', sans-serif;
   width: 100%;
-  margin-top: 4rem;
 `
 
 const PostList = styled.ul`
@@ -27,7 +26,7 @@ const PostItem = styled.li`
   margin-top: 1em;
 `
 
-const PostLink = styled(Link)`
+const PostLink = styled(Link)<LinkProps>`
   flex: 1;
 `
 
@@ -49,7 +48,10 @@ export default function BlogPosts() {
         <PostList>
           {posts.map((post) => (
             <PostItem key={post.frontmatter.meta?.title}>
-              <PostLink to={`/blog/${post.frontmatter.meta?.post}`}>
+              <PostLink
+                to={`/blog/${post.frontmatter.meta?.post}`}
+                viewTransition
+              >
                 <span>{post.frontmatter.meta?.title}</span>
               </PostLink>
               <time>{post.frontmatter.meta?.date}</time>
