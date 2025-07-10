@@ -1,5 +1,5 @@
 import { styled } from '@linaria/react'
-import Link from '../Link'
+import { Link } from 'react-router'
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -45,7 +45,9 @@ export default function Header() {
           {' '}
           <span>Måns Nilsson</span>
         </NavLink>
-        <a href="/blog">Blog</a>
+        <Link to="/blog" viewTransition>
+          Blog
+        </Link>
       </Nav>
       <SocialList>
         <SocialItem>

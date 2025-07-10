@@ -1,8 +1,8 @@
 import { styled } from '@linaria/react'
-import { Link } from 'react-router';
+import { Link, type LinkProps } from 'react-router'
 import { AnchorHTMLAttributes } from 'react'
 
-const StyledLinkBase = styled(Link)`
+const StyledLinkBase = styled(Link)<LinkProps>`
   position: relative;
   display: inline-block;
   text-decoration: none;
