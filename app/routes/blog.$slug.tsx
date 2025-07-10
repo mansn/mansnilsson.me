@@ -46,6 +46,24 @@ const Article = styled.article`
   max-width: 56rem;
 `
 
+const MetaData = styled.dl`
+  display: flex;
+  flex-direction: row;
+  gap: 0.325rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #64748b;
+  font-size: 1rem;
+`
+
+const DescriptionTerm = styled.dt`
+  display: block;
+`
+
+const DescriptionDetail = styled.dd`
+  display: block;
+`
+
 export function ErrorBoundary() {
   const error = useRouteError()
 
@@ -80,6 +98,10 @@ export default function BlogPost() {
     return (
       <Article>
         <Title>{post.frontmatter.meta?.title}</Title>
+        <MetaData>
+          <DescriptionTerm>Posted on:</DescriptionTerm>
+          <DescriptionDetail>{post.frontmatter.meta?.date}</DescriptionDetail>
+        </MetaData>
         {Component && <Component components={mdxComponents} />}
       </Article>
     )

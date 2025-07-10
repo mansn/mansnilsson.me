@@ -6,6 +6,7 @@ export const globalStyles = css`
     *::before,
     *::after {
       box-sizing: border-box;
+      margin: 0;
     }
 
     html {
@@ -44,6 +45,7 @@ export const globalStyles = css`
     p {
       color: #94a3b8; /* slate-400 */
       font-size: 1.125rem;
+      margin-bottom: 1.5rem;
     }
 
     strong {
