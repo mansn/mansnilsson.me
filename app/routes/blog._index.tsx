@@ -1,4 +1,8 @@
-import { useLoaderData, type LinkProps } from 'react-router'
+import {
+  useLoaderData,
+  useViewTransitionState,
+  type LinkProps,
+} from 'react-router'
 import { styled } from '@linaria/react'
 import { getPosts } from '~/utils/content.server'
 import Link from '~/shared/components/Link'

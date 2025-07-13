@@ -3,6 +3,7 @@ import {
   useLoaderData,
   isRouteErrorResponse,
   useRouteError,
+  useViewTransitionState,
 } from 'react-router'
 import { getPost } from '~/utils/content.server'
 import type { LoaderFunctionArgs } from 'react-router'
@@ -39,6 +40,15 @@ const Title = styled.h1`
   font-size: 2.5rem;
   line-height: 2.5rem;
   font-weight: 700;
+  view-transition-name: title;
+
+  ::view-transition-old(title) {
+    animation: 0.25s linear both shrink-x;
+  }
+
+  ::view-transition-new(title) {
+    animation: 0.25s 0.25s linear both grow-x;
+  }
 `
 
 const Article = styled.article`
@@ -88,7 +98,11 @@ export function ErrorBoundary() {
 
 export default function BlogPost() {
   const post = useLoaderData<typeof loader>()
+  const isTransitioning = useViewTransitionState(
+    '/blog/' + post.frontmatter.meta?.post
+  )
 
+  console.log('isTransitioning', isTransitioning)
   const Component = useMemo(() => {
     if (!post.code) return null
     return getMDXComponent(post.code)
@@ -97,7 +111,18 @@ export default function BlogPost() {
   try {
     return (
       <Article>
-        <Title>{post.frontmatter.meta?.title}</Title>
+        <Title
+          style={
+            isTransitioning
+              ? {
+                  color: '#facc15',
+                  fontSize: '16px',
+                }
+              : {}
+          }
+        >
+          {post.frontmatter.meta?.title}
+        </Title>
         <MetaData>
           <DescriptionTerm>Posted on:</DescriptionTerm>
           <DescriptionDetail>{post.frontmatter.meta?.date}</DescriptionDetail>
