@@ -35,7 +35,7 @@ const HeroContainer = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 4.25rem;
+  font-size: 3.25rem;
   line-height: 2.5rem;
   font-weight: 400;
   align-self: center;
