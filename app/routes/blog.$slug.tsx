@@ -36,21 +36,6 @@ const Container = styled.div`
   justify-content: center;
 `
 
-const Title = styled.h1`
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  font-weight: 700;
-  view-transition-name: title;
-
-  ::view-transition-old(title) {
-    animation: 0.25s linear both shrink-x;
-  }
-
-  ::view-transition-new(title) {
-    animation: 0.25s 0.25s linear both grow-x;
-  }
-`
-
 const Article = styled.article`
   font-family: 'Roboto', sans-serif;
   max-width: 56rem;
@@ -81,7 +66,7 @@ export function ErrorBoundary() {
     if (error.status === 404) {
       return (
         <Container>
-          <Title>Post Not Found</Title>
+          <h1>Post Not Found</h1>
           <p>Sorry, we couldn't find the post you're looking for.</p>
         </Container>
       )
@@ -90,7 +75,7 @@ export function ErrorBoundary() {
 
   return (
     <Container>
-      <Title>Oops!</Title>
+      <h1>Oops!</h1>
       <p>Something went wrong while loading this post.</p>
     </Container>
   )
@@ -103,26 +88,27 @@ export default function BlogPost() {
   )
 
   console.log('isTransitioning', isTransitioning)
+  console.log('title', post.frontmatter.meta?.title)
   const Component = useMemo(() => {
     if (!post.code) return null
     return getMDXComponent(post.code)
   }, [post?.code])
 
   try {
+    const viewTransitionName =
+      post.frontmatter.meta?.title?.toLowerCase().replaceAll(' ', '-') || 'none'
     return (
       <Article>
-        <Title
-          style={
-            isTransitioning
-              ? {
-                  color: '#facc15',
-                  fontSize: '16px',
-                }
-              : {}
-          }
+        <h1
+          style={{
+            fontSize: '2.5rem',
+            lineHeight: '2.5rem',
+            fontWeight: 700,
+            viewTransitionName,
+          }}
         >
           {post.frontmatter.meta?.title}
-        </Title>
+        </h1>
         <MetaData>
           <DescriptionTerm>Posted on:</DescriptionTerm>
           <DescriptionDetail>{post.frontmatter.meta?.date}</DescriptionDetail>

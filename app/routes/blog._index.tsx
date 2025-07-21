@@ -1,8 +1,4 @@
-import {
-  useLoaderData,
-  useViewTransitionState,
-  type LinkProps,
-} from 'react-router'
+import { useLoaderData, type LinkProps } from 'react-router'
 import { styled } from '@linaria/react'
 import { getPosts } from '~/utils/content.server'
 import Link from '~/shared/components/Link'
@@ -30,10 +26,6 @@ const PostItem = styled.li`
   margin-top: 1em;
 `
 
-const PostLink = styled(Link)<LinkProps>`
-  flex: 1;
-`
-
 export function ErrorBoundary() {
   return (
     <Container>
@@ -50,17 +42,28 @@ export default function BlogPosts() {
     return (
       <Container>
         <PostList>
-          {posts.map((post) => (
-            <PostItem key={post.frontmatter.meta?.title}>
-              <PostLink
-                to={`/blog/${post.frontmatter.meta?.post}`}
-                viewTransition
-              >
-                <span>{post.frontmatter.meta?.title}</span>
-              </PostLink>
-              <time>{post.frontmatter.meta?.date}</time>
-            </PostItem>
-          ))}
+          {posts.map((post) => {
+            const viewTransitionName =
+              post.frontmatter.meta?.title
+                ?.toLowerCase()
+                .replaceAll(' ', '-') || 'none'
+
+            return (
+              <PostItem key={post.frontmatter.meta?.title}>
+                <Link
+                  to={`/blog/${post.frontmatter.meta?.post}`}
+                  viewTransition
+                  style={{
+                    flex: 1,
+                    viewTransitionName,
+                  }}
+                >
+                  <span>{post.frontmatter.meta?.title}</span>
+                </Link>
+                <time>{post.frontmatter.meta?.date}</time>
+              </PostItem>
+            )
+          })}
         </PostList>
       </Container>
     )
