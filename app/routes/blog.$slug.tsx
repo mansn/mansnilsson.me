@@ -3,7 +3,6 @@ import {
   useLoaderData,
   isRouteErrorResponse,
   useRouteError,
-  useViewTransitionState,
 } from 'react-router'
 import { getPost } from '~/utils/content.server'
 import type { LoaderFunctionArgs } from 'react-router'
@@ -83,12 +82,7 @@ export function ErrorBoundary() {
 
 export default function BlogPost() {
   const post = useLoaderData<typeof loader>()
-  const isTransitioning = useViewTransitionState(
-    '/blog/' + post.frontmatter.meta?.post
-  )
 
-  console.log('isTransitioning', isTransitioning)
-  console.log('title', post.frontmatter.meta?.title)
   const Component = useMemo(() => {
     if (!post.code) return null
     return getMDXComponent(post.code)
