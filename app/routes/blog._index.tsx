@@ -1,7 +1,7 @@
 import { useLoaderData, type LinkProps } from 'react-router'
 import { styled } from '@linaria/react'
 import { getPosts } from '~/utils/content.server'
-import Link from '~/shared/components/Link'
+import AnchorOrLink from '~/shared/components/AnchorOrLink'
 
 export async function loader() {
   const posts = await getPosts()
@@ -50,7 +50,7 @@ export default function BlogPosts() {
 
             return (
               <PostItem key={post.frontmatter.meta?.title}>
-                <Link
+                <AnchorOrLink
                   to={`/blog/${post.frontmatter.meta?.post}`}
                   viewTransition
                   style={{
@@ -59,7 +59,7 @@ export default function BlogPosts() {
                   }}
                 >
                   <span>{post.frontmatter.meta?.title}</span>
-                </Link>
+                </AnchorOrLink>
                 <time>{post.frontmatter.meta?.date}</time>
               </PostItem>
             )

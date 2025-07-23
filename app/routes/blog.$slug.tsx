@@ -8,10 +8,11 @@ import { getPost } from '~/utils/content.server'
 import type { LoaderFunctionArgs } from 'react-router'
 import { useMemo } from 'react'
 import { styled } from '@linaria/react'
-import StyledLink from '~/shared/components/Link'
+import { MDXComponents } from 'mdx/types'
+import AnchorOrLink from '~/shared/components/AnchorOrLink'
 
-const mdxComponents = {
-  a: StyledLink,
+const mdxComponents: MDXComponents = {
+  a: AnchorOrLink,
 }
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -33,6 +34,13 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`
+
+const Title = styled.h1`
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  view-transition-name: ({viewTransitionName}) => viewTransitionName;
 `
 
 const Article = styled.article`
@@ -93,7 +101,7 @@ export default function BlogPost() {
       post.frontmatter.meta?.title?.toLowerCase().replaceAll(' ', '-') || 'none'
     return (
       <Article>
-        <h1
+        <Title
           style={{
             fontSize: '2.5rem',
             lineHeight: '2.5rem',
@@ -102,7 +110,7 @@ export default function BlogPost() {
           }}
         >
           {post.frontmatter.meta?.title}
-        </h1>
+        </Title>
         <MetaData>
           <DescriptionTerm>Posted on:</DescriptionTerm>
           <DescriptionDetail>{post.frontmatter.meta?.date}</DescriptionDetail>
