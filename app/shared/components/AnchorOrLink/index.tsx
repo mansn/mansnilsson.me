@@ -52,16 +52,16 @@ export default function AnchorOrLink(
   // Use anchor tag for external links, otherwise use Link.
   // This resolves a type issue where the React Router Link component
   // can't be used to directly substitute an anchor tag.
-  const { to, ...rest } = props
-  if (to && typeof to === 'string' && to.startsWith('http')) {
+  const { to, href, ...rest } = props
+  if (href && typeof href === 'string' && href.startsWith('http')) {
     return (
-      <StyledAnchor href={to} target="_blank" rel="noopener noreferrer">
+      <StyledAnchor href={href} target="_blank" rel="noopener noreferrer">
         <span>{props.children}</span>
       </StyledAnchor>
     )
   } else {
     return (
-      <StyledLink to={to ?? ''} {...props}>
+      <StyledLink to={to ?? ''} {...rest}>
         <span>{props.children}</span>
       </StyledLink>
     )
