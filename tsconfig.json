@@ -1,8 +1,19 @@
 {
-  "include": [".react-router/types/**/*", "**/*.ts", "**/*.tsx"],
+  "include": [
+    ".react-router/types/**/*",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
   "compilerOptions": {
-    "types": ["@react-router/node", "vite/client"],
-    "lib": ["DOM", "DOM.Iterable", "ES2019"],
+    "types": [
+      "@react-router/node",
+      "vite/client"
+    ],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2021"
+    ],
     "isolatedModules": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -16,9 +27,14 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": [
+        "./app/*"
+      ]
     },
-    "rootDirs": [".", "./.react-router/types"],
+    "rootDirs": [
+      ".",
+      "./.react-router/types"
+    ],
     "noEmit": true
   }
 }

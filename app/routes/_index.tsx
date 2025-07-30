@@ -4,10 +4,10 @@ import { useEffect, useMemo, useState } from 'react'
 import { styled } from '@linaria/react'
 import { css } from '@linaria/core'
 import { getIntro, getPosts } from '~/utils/content.server'
-import StyledLink from '~/shared/components/Link'
+import AnchorOrLink from '~/shared/components/AnchorOrLink'
 
 const mdxComponents = {
-  a: StyledLink,
+  a: AnchorOrLink,
 }
 
 export async function loader() {

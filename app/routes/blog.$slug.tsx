@@ -8,10 +8,11 @@ import { getPost } from '~/utils/content.server'
 import type { LoaderFunctionArgs } from 'react-router'
 import { useMemo } from 'react'
 import { styled } from '@linaria/react'
-import StyledLink from '~/shared/components/Link'
+import { MDXComponents } from 'mdx/types'
+import AnchorOrLink from '~/shared/components/AnchorOrLink'
 
-const mdxComponents = {
-  a: StyledLink,
+const mdxComponents: MDXComponents = {
+  a: AnchorOrLink,
 }
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -39,6 +40,7 @@ const Title = styled.h1`
   font-size: 2.5rem;
   line-height: 2.5rem;
   font-weight: 700;
+  view-transition-name: ({viewTransitionName}) => viewTransitionName;
 `
 
 const Article = styled.article`
@@ -71,7 +73,7 @@ export function ErrorBoundary() {
     if (error.status === 404) {
       return (
         <Container>
-          <Title>Post Not Found</Title>
+          <h1>Post Not Found</h1>
           <p>Sorry, we couldn't find the post you're looking for.</p>
         </Container>
       )
@@ -80,7 +82,7 @@ export function ErrorBoundary() {
 
   return (
     <Container>
-      <Title>Oops!</Title>
+      <h1>Oops!</h1>
       <p>Something went wrong while loading this post.</p>
     </Container>
   )
@@ -95,9 +97,20 @@ export default function BlogPost() {
   }, [post?.code])
 
   try {
+    const viewTransitionName =
+      post.frontmatter.meta?.title?.toLowerCase().replaceAll(' ', '-') || 'none'
     return (
       <Article>
-        <Title>{post.frontmatter.meta?.title}</Title>
+        <Title
+          style={{
+            fontSize: '2.5rem',
+            lineHeight: '2.5rem',
+            fontWeight: 700,
+            viewTransitionName,
+          }}
+        >
+          {post.frontmatter.meta?.title}
+        </Title>
         <MetaData>
           <DescriptionTerm>Posted on:</DescriptionTerm>
           <DescriptionDetail>{post.frontmatter.meta?.date}</DescriptionDetail>
