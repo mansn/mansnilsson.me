@@ -41,7 +41,7 @@
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^5.0.0",
     "styled-components": "^5.3.5",
-    "typescript": "^5.1.6",
+    "typescript": "^5.9.2",
     "vite": "^5.3.3",
     "vite-tsconfig-paths": "^4.3.2"
   },
