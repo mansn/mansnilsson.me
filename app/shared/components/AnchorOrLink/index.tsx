@@ -4,24 +4,24 @@ import { Link, LinkProps } from 'react-router'
 const linkStyleBase = {
   position: 'relative',
   display: 'inline-block',
-  'text-decoration': 'none',
-  'padding-bottom': '2px' /* space for underline */,
+  textDecoration: 'none',
+  paddingBottom: '2px', // space for underline
   width: 'fit-content',
 
-  span: {
+  '& span': {
     position: 'relative',
   },
 
-  'span::after': {
-    content: '',
+  '& span::after': {
+    content: '""',
     position: 'absolute',
     left: 0,
     bottom: 0,
     width: '100%',
     height: '2px',
-    'background-color': 'currentColor',
+    backgroundColor: 'currentColor',
     transform: 'scaleX(0)',
-    'transform-origin': 'center',
+    transformOrigin: 'center',
     transition: 'transform 0.3s ease',
   },
 
@@ -29,7 +29,6 @@ const linkStyleBase = {
     transform: 'scaleX(1)',
   },
 }
-
 const StyledAnchor = styled.a`
   ${linkStyleBase}
 `
@@ -62,7 +61,7 @@ export default function AnchorOrLink(
   } else {
     return (
       <StyledLink to={to ?? ''} {...rest}>
-        <span>{props.children}</span>
+        {props.children}
       </StyledLink>
     )
   }
