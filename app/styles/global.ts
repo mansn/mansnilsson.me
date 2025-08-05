@@ -19,7 +19,6 @@ export const globalStyles = css`
     }
 
     body {
-      width: min(75ch, 100%);
       max-width: 100%;
       padding: 0 1rem;
       display: flex;
@@ -27,6 +26,8 @@ export const globalStyles = css`
       justify-content: center;
       align-items: center;
       margin: auto;
+      margin-left: 10vw;
+      margin-right: 10vw;
     }
 
     h1,

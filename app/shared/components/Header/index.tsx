@@ -48,6 +48,9 @@ export default function Header() {
         <Link to="/blog" viewTransition>
           Blog
         </Link>
+        <Link to="/about" viewTransition>
+          About
+        </Link>
       </Nav>
       <SocialList>
         <SocialItem>
