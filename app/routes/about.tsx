@@ -52,24 +52,25 @@ export default function About() {
         <ProfileImage src="../images/me.webp" alt="Måns Nilsson in grayscale" />
       </HeroContainer>
       <p>
-        I was born in 1987 in Malmö, Sweden. I've got a background as a QA
-        engineer, but nowadays I contribute as a fullstack developer within
+        I was born in 1987 in Malmö, Sweden. I started my career as a QA
+        engineer, but nowadays I work as a fullstack developer within
         JavaScript/TypeScript.
       </p>
       <p>
-        I highly value taking ownership of my work, take on responsibilities,
-        deliver quickly with short feedback loops. This mindset has opened up
-        opportunities for me to host competence forums, represent my team in
-        various groups/
+        A few of my guiding principles is to be a responsible developer, humble,
+        open-minded, calm and always staying curious. I believe this has opened
+        up significant opportunities to me, such as: hosting competence forums,
+        representing teams in various groups/
         <AnchorOrLink to="https://www.atlassian.com/agile/agile-at-scale/spotify">
           <span>guilds</span>
         </AnchorOrLink>{' '}
-        as well as work as an Engineering Manager for a team with 6-7
-        developers.
+        as well leading a team of 6-7 developers as an Engineering Manager.
       </p>
       <p>
-        I love working with React, TypeScript, and Node.js, and I'm always eager
-        to learn new technologies and improve my skills.
+        I love working with React, TypeScript, and Node.js. I've also worked on
+        a mobile app (React Native) with thousands of users. I'm always eager to
+        learn new technologies and improve my skills, and that's how I've been
+        able to pivot from QA engineer to a fullstack developer.
       </p>
     </MainContainer>
   )
