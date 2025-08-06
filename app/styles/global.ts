@@ -20,7 +20,6 @@ export const globalStyles = css`
 
     body {
       max-width: 100%;
-      padding: 0 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
