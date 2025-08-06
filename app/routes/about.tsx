@@ -2,6 +2,7 @@ import { styled } from '@linaria/react'
 import AnchorOrLink from '~/shared/components/AnchorOrLink'
 
 const MainContainer = styled.main`
+  min-width: min-content;
   line-height: 1.75rem;
 `
 
@@ -22,7 +23,7 @@ const HeroContainer = styled.div`
 
 const Title = styled.h1`
   font-size: 3.25rem;
-  line-height: 2.5rem;
+  line-height: 3.5rem;
   font-weight: 400;
   align-self: center;
 
