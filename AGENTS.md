@@ -1,0 +1,22 @@
+Repository Agent Guide (concise)
+
+- Build/dev/start:
+  - Build: npm run build (react-router build)
+  - Dev/start dev server: npm run dev (local dev server)
+  - Type check: npm run typecheck (react-router typegen + tsc)
+- Lint/format:
+  - ESLint: npx eslint . (extends @remix-run/eslint-config)
+  - Prettier: semi=false, singleQuote=true, trailingComma=es5; MDX proseWrap=always. Use editor plugin or npx prettier --check . / --write .
+- Tests:
+  - No test runner configured. Single-test N/A. If Vitest is added: npx vitest path/to/file.test.ts -t "test name".
+- TypeScript/style:
+  - TS strict=true; jsx=react-jsx; target ES2020; moduleResolution=Bundler; noEmit; Node >= 20 required.
+  - Use TypeScript (preferred over JS). Add explicit return types for loaders/actions/utils; leverage inference for locals.
+  - Imports: group builtin/third-party first, then internal using ~/* alias (maps to app/*). Avoid unused imports.
+  - Components PascalCase; variables/functions camelCase; route files follow React Router file-based routing (e.g., app/routes/blog.$slug.tsx).
+  - Styling: linaria (@linaria/react) and styled-components are available; co-locate styles; name files *.styled.ts when applicable.
+- Error handling:
+  - Prefer try/catch around filesystem, network, and MDX bundling. For route errors, provide ErrorBoundary in route modules and return typed responses.
+- Content/MDX:
+  - Use app/content and app/utils/content.server.ts helpers (bundleMDX with remark-gfm, rehype-highlight). Keep frontmatter under frontmatter.meta.
+  - Don’t autocomplete sentences in .md/.mdx. 
