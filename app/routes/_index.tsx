@@ -21,10 +21,6 @@ export async function loader() {
   return data
 }
 
-const MainContainer = styled.main`
-  line-height: 1.75rem;
-`
-
 const HeroContainer = styled.div`
   display: flex;
   align-items: center;
@@ -36,13 +32,11 @@ const HeroContainer = styled.div`
 
 const Title = styled.h1`
   font-size: 3.25rem;
-  line-height: 2.5rem;
   font-weight: 400;
   align-self: center;
 
   @media (min-width: 1024px) {
     font-size: 3rem;
-    line-height: 1;
   }
 `
 
@@ -70,7 +64,7 @@ export default function Index() {
   }, [])
 
   return (
-    <MainContainer>
+    <div>
       <HeroContainer>
         <Title>
           <span
@@ -102,6 +96,6 @@ export default function Index() {
         </Title>
       </HeroContainer>
       <Component components={mdxComponents} />
-    </MainContainer>
+    </div>
   )
 }

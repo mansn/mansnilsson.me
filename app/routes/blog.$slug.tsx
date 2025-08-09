@@ -38,7 +38,6 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-size: 2.5rem;
-  line-height: 2.5rem;
   font-weight: 700;
   view-transition-name: ({viewTransitionName}) => viewTransitionName;
 `
@@ -52,10 +51,8 @@ const MetaData = styled.dl`
   display: flex;
   flex-direction: row;
   gap: 0.325rem;
-  margin-top: 1rem;
   margin-bottom: 2rem;
   color: #64748b;
-  font-size: 1rem;
 `
 
 const DescriptionTerm = styled.dt`
@@ -103,9 +100,6 @@ export default function BlogPost() {
       <Article>
         <Title
           style={{
-            fontSize: '2.5rem',
-            lineHeight: '2.5rem',
-            fontWeight: 700,
             viewTransitionName,
           }}
         >
