@@ -1,7 +1,7 @@
 import { styled } from '@linaria/react'
 import AnchorOrLink from '~/shared/components/AnchorOrLink'
 
-const MainContainer = styled.main`
+const MainContainer = styled.div`
   min-width: min-content;
   line-height: 1.75rem;
 `

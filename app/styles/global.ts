@@ -19,14 +19,19 @@ export const globalStyles = css`
     }
 
     body {
-      max-width: 100%;
-      display: flex;
-      flex-direction: column;
+      max-width: 68.75rem;
       justify-content: center;
       align-items: center;
-      margin: auto;
-      margin-left: 10vw;
-      margin-right: 10vw;
+      margin-inline: auto;
+
+      --viewport-padding: 32px;
+
+      // Reduce padding on smaller screens
+      @media (max-width: 35.1875rem) {
+        body {
+          --viewport-padding: 16px;
+        }
+      }
     }
 
     h1,

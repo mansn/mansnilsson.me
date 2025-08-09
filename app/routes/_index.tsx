@@ -22,7 +22,6 @@ export async function loader() {
 }
 
 const MainContainer = styled.main`
-  width: min(75ch, 100%);
   line-height: 1.75rem;
 `
 

@@ -14,11 +14,25 @@ const HeaderContainer = styled.header`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
 `
 
 const NavLink = styled(Link)<LinkProps>`
   color: white;
+`
+
+const FullName = styled.span`
+  display: none;
+  @media (min-width: 430px) {
+    display: inline;
+  }
+`
+
+const ShortName = styled.span`
+  display: inline;
+  @media (min-width: 430px) {
+    display: none;
+  }
 `
 
 export default function Header() {
@@ -26,8 +40,8 @@ export default function Header() {
     <HeaderContainer style={{ maxWidth: '100%' }}>
       <Nav>
         <NavLink to="/" viewTransition>
-          {' '}
-          <span>Måns Nilsson</span>
+          <FullName>Måns Nilsson</FullName>
+          <ShortName>Måns N.</ShortName>
         </NavLink>
         <Link to="/blog" viewTransition>
           Blog
