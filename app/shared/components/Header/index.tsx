@@ -45,7 +45,7 @@ export default function Header() {
         <Link to="/blog" viewTransition>
           Blog
         </Link>
-        <Link to="/about" viewTransition>
+        <Link to="/about" viewTransition prefetch="render">
           About
         </Link>
       </Nav>
