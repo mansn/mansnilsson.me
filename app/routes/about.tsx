@@ -25,7 +25,7 @@ const Title = styled.h1`
   font-size: 3.25rem;
   line-height: 3.5rem;
   font-weight: 400;
-  align-self: center;
+  text-align: center;
 
   @media (min-width: 1024px) {
     font-size: 3rem;
