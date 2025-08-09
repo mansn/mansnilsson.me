@@ -2,7 +2,6 @@ import { styled } from '@linaria/react'
 import AnchorOrLink from '~/shared/components/AnchorOrLink'
 
 const MainContainer = styled.div`
-  min-width: min-content;
   line-height: 1.75rem;
 `
 
@@ -34,10 +33,12 @@ const Title = styled.h1`
 `
 
 const ProfileImage = styled.img`
+  display: block;
   width: auto;
   border-radius: 50%;
   margin-left: 2rem;
   max-height: 40vh;
+  max-width: 100%;
 `
 
 export default function About() {
