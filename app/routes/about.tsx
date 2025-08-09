@@ -1,10 +1,6 @@
 import { styled } from '@linaria/react'
 import AnchorOrLink from '~/shared/components/AnchorOrLink'
 
-const MainContainer = styled.div`
-  line-height: 1.75rem;
-`
-
 const HeroContainer = styled.div`
   display: flex;
   align-items: center;
@@ -21,14 +17,14 @@ const HeroContainer = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 3.25rem;
-  line-height: 3.5rem;
+  font-size: 1.875rem;
+  line-height: 1.2;
   font-weight: 400;
   text-align: center;
 
   @media (min-width: 1024px) {
-    font-size: 3rem;
-    line-height: 1;
+    font-size: 2.6rem;
+    line-height: 1.2;
   }
 `
 
@@ -37,13 +33,13 @@ const ProfileImage = styled.img`
   width: auto;
   border-radius: 50%;
   margin-left: 2rem;
-  max-height: 40vh;
+  max-height: 25vh;
   max-width: 100%;
 `
 
 export default function About() {
   return (
-    <MainContainer>
+    <div>
       <HeroContainer>
         <div>
           <Title>
@@ -74,6 +70,6 @@ export default function About() {
         learn new technologies and improve my skills, and that's how I've been
         able to pivot from QA engineer to a fullstack developer.
       </p>
-    </MainContainer>
+    </div>
   )
 }

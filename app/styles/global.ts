@@ -19,6 +19,7 @@ export const globalStyles = css`
     }
 
     body {
+      line-height: 1.5;
       max-width: 68.75rem;
       justify-content: center;
       align-items: center;
