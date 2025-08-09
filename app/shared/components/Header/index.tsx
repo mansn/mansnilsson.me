@@ -9,7 +9,6 @@ const HeaderContainer = styled.header`
   color: white;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 4rem;
 `
 
 const Nav = styled.nav`
