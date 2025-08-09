@@ -32,7 +32,6 @@ const ProfileImage = styled.img`
   display: block;
   width: auto;
   border-radius: 50%;
-  margin-left: 2rem;
   max-height: 25vh;
   max-width: 100%;
 `
