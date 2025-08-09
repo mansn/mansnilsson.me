@@ -4,7 +4,6 @@ import { styled } from '@linaria/react'
 import { globalStyles } from './styles/global'
 import Footer from './shared/components/Footer'
 import Header from './shared/components/Header'
-import { MaxWidthWrapper } from './shared/components/FullWidthWrapper'
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -15,11 +14,7 @@ export const links: LinksFunction = () => [
   },
 ]
 
-const LayoutContainer = styled.div`
-  isolation: isolate;
-`
-
-const PageContainer = styled.div`
+const Body = styled.body`
   display: flex;
   flex-direction: column;
 `
@@ -34,23 +29,13 @@ export default function App() {
         <meta name="title" content="Måns Nilsson" />
         <Meta />
       </head>
-      <body>
-        <LayoutContainer>
-          <PageContainer>
-            <MaxWidthWrapper>
-              <Header />
-            </MaxWidthWrapper>
-            <MaxWidthWrapper>
-              <Outlet />
-            </MaxWidthWrapper>
-            <MaxWidthWrapper>
-              <Footer />
-            </MaxWidthWrapper>
-          </PageContainer>
-        </LayoutContainer>
+      <Body>
+        <Header />
+        <Outlet />
         <ScrollRestoration />
         <Scripts />
-      </body>
+        <Footer />
+      </Body>
     </html>
   )
 }
