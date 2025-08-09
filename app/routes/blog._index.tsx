@@ -10,7 +10,8 @@ export async function loader() {
 
 const Container = styled.div`
   font-family: 'Nunito', sans-serif;
-  width: 100%;
+  width: min(75ch, 100%);
+  margin: 0 auto;
 `
 
 const PostList = styled.ul`
@@ -24,6 +25,7 @@ const PostItem = styled.li`
   display: flex;
   padding-left: 0;
   margin-top: 1em;
+  gap: 2em;
 `
 
 export function ErrorBoundary() {

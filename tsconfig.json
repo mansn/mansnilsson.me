@@ -1,5 +1,6 @@
 {
   "include": [
+    "types/**/*",
     ".react-router/types/**/*",
     "**/*.ts",
     "**/*.tsx"
