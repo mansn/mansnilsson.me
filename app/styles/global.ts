@@ -11,8 +11,6 @@ export const globalStyles = css`
 
     html {
       background-color: #020617; /* slate-950 */
-      padding-top: 2.5rem;
-      padding-bottom: 2.5rem;
       line-height: 1.5;
       tab-size: 4;
       font-family: 'Roboto', sans-serif;
