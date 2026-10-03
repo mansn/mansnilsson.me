@@ -1,4 +1,4 @@
-import { useLoaderData, type LinkProps } from 'react-router'
+import { useLoaderData } from 'react-router'
 import { styled } from '@linaria/react'
 import { getPosts } from '~/utils/content.server'
 import AnchorOrLink from '~/shared/components/AnchorOrLink'
@@ -10,22 +10,26 @@ export async function loader() {
 
 const Container = styled.div`
   font-family: 'Nunito', sans-serif;
-  width: min(75ch, 100%);
-  margin: 0 auto;
+  padding: 0 2em;
 `
 
 const PostList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
 `
 
 const PostItem = styled.li`
   display: flex;
-  padding-left: 0;
+  justify-content: space-between;
   margin-top: 1em;
   gap: 2em;
+`
+
+const PostTime = styled.time`
+  text-wrap: nowrap;
+  display: block;
+  margin-left: 1em;
+  margin-right: 1em;
 `
 
 export function ErrorBoundary() {
@@ -56,13 +60,12 @@ export default function BlogPosts() {
                   to={`/blog/${post.frontmatter.meta?.post}`}
                   viewTransition
                   style={{
-                    flex: 1,
                     viewTransitionName,
                   }}
                 >
                   <span>{post.frontmatter.meta?.title}</span>
                 </AnchorOrLink>
-                <time>{post.frontmatter.meta?.date}</time>
+                <PostTime>{post.frontmatter.meta?.date}</PostTime>
               </PostItem>
             )
           })}

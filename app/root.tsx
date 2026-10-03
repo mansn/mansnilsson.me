@@ -17,6 +17,7 @@ export const links: LinksFunction = () => [
 
 const LayoutContainer = styled.div`
   isolation: isolate;
+  margin-inline: 10vw;
 `
 
 const PageContainer = styled.div`
@@ -35,19 +36,15 @@ export default function App() {
         <Meta />
       </head>
       <body>
+        <Header />
         <LayoutContainer>
           <PageContainer>
             <MaxWidthWrapper>
-              <Header />
-            </MaxWidthWrapper>
-            <MaxWidthWrapper>
               <Outlet />
-            </MaxWidthWrapper>
-            <MaxWidthWrapper>
-              <Footer />
             </MaxWidthWrapper>
           </PageContainer>
         </LayoutContainer>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

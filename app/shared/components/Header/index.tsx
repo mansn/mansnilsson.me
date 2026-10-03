@@ -9,6 +9,9 @@ const HeaderContainer = styled.header`
   color: white;
   display: flex;
   justify-content: space-between;
+  padding-block: 3rem;
+  padding-inline: 5vw;
+
 `
 
 const Nav = styled.nav`
@@ -16,7 +19,7 @@ const Nav = styled.nav`
   gap: 0.8rem;
 `
 
-const NavLink = styled(Link)<LinkProps>`
+const NavLink = styled(Link) <LinkProps>`
   color: white;
 `
 
@@ -36,7 +39,7 @@ const ShortName = styled.span`
 
 export default function Header() {
   return (
-    <HeaderContainer style={{ maxWidth: '100%' }}>
+    <HeaderContainer>
       <Nav>
         <NavLink to="/" viewTransition>
           <FullName>Måns Nilsson</FullName>

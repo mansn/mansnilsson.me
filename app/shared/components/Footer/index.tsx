@@ -8,6 +8,8 @@ const StyledFooter = styled.footer`
   display: flex;
   font-size: 1rem;
   justify-content: space-between;
+  padding-block: 3rem;
+  padding-inline: 5vw; 
 `
 
 const Text = styled.span`
