@@ -10,7 +10,6 @@ export async function loader() {
 
 const Container = styled.div`
   font-family: 'Nunito', sans-serif;
-  padding: 0 2em;
 `
 
 const PostList = styled.ul`
