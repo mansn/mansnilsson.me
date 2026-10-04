@@ -17,7 +17,8 @@ export const links: LinksFunction = () => [
 
 const LayoutContainer = styled.div`
   isolation: isolate;
-  margin-inline: 10vw;
+  margin-inline: auto;
+  max-width: 100rem;
 `
 
 const PageContainer = styled.div`

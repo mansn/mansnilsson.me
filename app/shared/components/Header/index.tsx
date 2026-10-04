@@ -4,6 +4,8 @@ import SocialList from '../SocialList'
 
 const HeaderContainer = styled.header`
   width: 100%;
+  max-width: 100rem;
+  margin-inline: auto;
   font-family: 'Nunito', sans-serif;
   text-align: left;
   color: white;

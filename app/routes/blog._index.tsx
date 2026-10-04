@@ -13,8 +13,9 @@ const Container = styled.div`
 `
 
 const PostList = styled.ul`
-  padding: 0;
-  margin: 0;
+  margin-inline: auto;
+  max-width: 56rem;
+  padding-inline: 2rem;
 `
 
 const PostItem = styled.li`
@@ -27,8 +28,6 @@ const PostItem = styled.li`
 const PostTime = styled.time`
   text-wrap: nowrap;
   display: block;
-  margin-left: 1em;
-  margin-right: 1em;
 `
 
 export function ErrorBoundary() {
