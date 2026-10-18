@@ -8,12 +8,8 @@ import { getPost } from '~/utils/content.server'
 import type { LoaderFunctionArgs } from 'react-router'
 import { useMemo } from 'react'
 import { styled } from '@linaria/react'
-import { MDXComponents } from 'mdx/types'
 import AnchorOrLink from '~/shared/components/AnchorOrLink'
-
-const mdxComponents: MDXComponents = {
-  a: AnchorOrLink,
-}
+import MdxComponents from '~/shared/components/MdxComponents'
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const slug = params.slug
@@ -109,7 +105,7 @@ export default function BlogPost() {
           <DescriptionTerm>Posted on:</DescriptionTerm>
           <DescriptionDetail>{post.frontmatter.meta?.date}</DescriptionDetail>
         </MetaData>
-        {Component && <Component components={mdxComponents} />}
+        {Component && <Component components={MdxComponents({ AnchorOrLink })} />}
       </Article>
     )
   } catch (error) {

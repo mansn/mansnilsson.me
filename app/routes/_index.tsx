@@ -5,10 +5,7 @@ import { styled } from '@linaria/react'
 import { css } from '@linaria/core'
 import { getIntro, getPosts } from '~/utils/content.server'
 import AnchorOrLink from '~/shared/components/AnchorOrLink'
-
-const mdxComponents = {
-  a: AnchorOrLink,
-}
+import MdxComponents from '~/shared/components/MdxComponents'
 
 export async function loader() {
   const posts = await getPosts()
@@ -95,7 +92,7 @@ export default function Index() {
           </span>
         </Title>
       </HeroContainer>
-      <Component components={mdxComponents} />
+      <Component components={MdxComponents({ AnchorOrLink })} />
     </div>
   )
 }

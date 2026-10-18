@@ -20,6 +20,11 @@ But in the long run I think I'll be using Cursor as my "daily driver" and tweak 
 
 Oh btw, I disabled Cursor for MDX files. This doesn't really have to be an MDX file though.
 I didn't want to disable it completely for MDX, but I wasn't able to create a cursor rule to have it help me with spelling mistakes or typos, and not predict whole sentences (that's really annoying).
-I specifically gave this content (among some other things) in my `rules.mdc` file:
-> - Don't autocomplete sentences in markdown (.md or .mdx) files. You can point out spelling errors, but I want to think about _what_ to write on my own.
-But it just kept on predicting sentences anyway. So I ended up disabling it for MDX.
+I specifically gave this content (among some other things) in my `rules.mdc` file: 
+
+```md
+Don't autocomplete sentences in markdown (.md or .mdx) files. 
+You can point out spelling errors, but I want to think about _what_ to write on my own.
+```
+
+That didn't work though, because it just kept on predicting sentences anyway. So I ended up disabling it for MDX. =)

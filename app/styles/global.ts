@@ -85,6 +85,7 @@ export const globalStyles = css`
 
     ul {
       margin: 0;
+      margin-bottom: 1.5rem;
       color: #94a3b8; /* slate-400 */
     }
   }
