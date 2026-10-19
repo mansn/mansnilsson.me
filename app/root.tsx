@@ -5,7 +5,7 @@ import { globalStyles } from './styles/global'
 import Footer from './shared/components/Footer'
 import Header from './shared/components/Header'
 import { MaxWidthWrapper } from './shared/components/FullWidthWrapper'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/react'
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
