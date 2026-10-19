@@ -10,7 +10,7 @@ compiled by `@wyw-in-js/vite`).
 ```mermaid
 flowchart TD
   subgraph Build["Build / config"]
-    vite["vite.config.ts<br/>plugins: @mdx-js/rollup, reactRouter,<br/>tsconfigPaths (~/* → app/*), wyw (Linaria)"]
+    vite["vite.config.ts<br/>plugins: @mdx-js/rollup, reactRouter,<br/>wyw (Linaria);<br/>resolve.tsconfigPaths (~/* → app/*)"]
     rrconf["react-router.config.ts<br/>ssr: true, vercelPreset()"]
     routesTs["app/routes.ts<br/>flatRoutes() — file-based routing"]
   end

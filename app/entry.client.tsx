@@ -1,4 +1,4 @@
-import { HydratedRouter } from 'react-router/dom';
+import { HydratedRouter } from 'react-router/dom'
 import { startTransition, StrictMode, useEffect } from 'react'
 import { hydrateRoot } from 'react-dom/client'
 import posthog from 'posthog-js'

@@ -6,9 +6,7 @@ interface MdxComponentsProps {
   AnchorOrLink: ComponentType<any>
 }
 
-export default function MdxComponents({
-  AnchorOrLink,
-}: MdxComponentsProps): any {
+export default function MdxComponents({ AnchorOrLink }: MdxComponentsProps): any {
   return {
     a: AnchorOrLink,
     code: (props: any) => {
@@ -16,7 +14,11 @@ export default function MdxComponents({
       if (isInline) {
         return <InlineCode {...props} />
       }
-      return <CodeBlock><code>{props.children}</code></CodeBlock>
+      return (
+        <CodeBlock>
+          <code>{props.children}</code>
+        </CodeBlock>
+      )
     },
   }
 }

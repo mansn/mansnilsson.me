@@ -13,7 +13,6 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   padding-block: 3rem;
   padding-inline: 5vw;
-
 `
 
 const Nav = styled.nav`
@@ -21,7 +20,7 @@ const Nav = styled.nav`
   gap: 0.8rem;
 `
 
-const NavLink = styled(Link) <LinkProps>`
+const NavLink = styled(Link)<LinkProps>`
   color: white;
 `
 

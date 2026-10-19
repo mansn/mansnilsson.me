@@ -32,10 +32,7 @@ const getMdx = async (source: string) => {
     },
     mdxOptions: (options) => {
       options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm]
-      options.rehypePlugins = [
-        ...(options.rehypePlugins ?? []),
-        rehypeHighlight,
-      ]
+      options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypeHighlight]
       return options
     },
   })
@@ -44,10 +41,7 @@ const getMdx = async (source: string) => {
 }
 
 export async function getIntro() {
-  const data = await fs.readFile(
-    path.join(process.cwd(), 'app/content/intro.mdx'),
-    'utf8'
-  )
+  const data = await fs.readFile(path.join(process.cwd(), 'app/content/intro.mdx'), 'utf8')
 
   const post = await getMdx(data)
 
@@ -67,10 +61,7 @@ export async function getIntro() {
 export async function getPost(slug: string) {
   let data: string
   try {
-    data = await fs.readFile(
-      path.join(process.cwd(), `app/content/posts/${slug}.mdx`),
-      'utf8'
-    )
+    data = await fs.readFile(path.join(process.cwd(), `app/content/posts/${slug}.mdx`), 'utf8')
   } catch (error) {
     // A missing file means an unknown slug; let the route respond with 404
     if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null
@@ -87,16 +78,11 @@ export async function getPost(slug: string) {
 }
 
 export async function getPosts() {
-  const allPosts = await fs.readdir(
-    path.join(process.cwd(), 'app/content/posts')
-  )
+  const allPosts = await fs.readdir(path.join(process.cwd(), 'app/content/posts'))
 
   const mappedPosts = await Promise.all(
     allPosts.map(async (fileName) => {
-      const postData = await fs.readFile(
-        path.join(process.cwd(), `app/content/posts/${fileName}`),
-        'utf8'
-      )
+      const postData = await fs.readFile(path.join(process.cwd(), `app/content/posts/${fileName}`), 'utf8')
       const mdxResult = await getMdx(postData)
       return {
         ...mdxResult,

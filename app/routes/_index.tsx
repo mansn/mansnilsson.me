@@ -74,10 +74,7 @@ export default function Index() {
           >
             Måns
           </span>
-          <span
-            className={mounted ? dropInAnimation : ''}
-            style={{ animationDelay: '400ms', opacity: '0' }}
-          >
+          <span className={mounted ? dropInAnimation : ''} style={{ animationDelay: '400ms', opacity: '0' }}>
             {' '}
           </span>
           <span

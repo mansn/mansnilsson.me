@@ -47,10 +47,7 @@ export default function BlogPosts() {
       <Container>
         <PostList>
           {posts.map((post) => {
-            const viewTransitionName =
-              post.frontmatter.meta?.title
-                ?.toLowerCase()
-                .replaceAll(' ', '-') || 'none'
+            const viewTransitionName = post.frontmatter.meta?.title?.toLowerCase().replaceAll(' ', '-') || 'none'
 
             return (
               <PostItem key={post.frontmatter.meta?.title}>

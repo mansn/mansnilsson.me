@@ -1,9 +1,5 @@
 import { getMDXComponent } from 'mdx-bundler/client'
-import {
-  useLoaderData,
-  isRouteErrorResponse,
-  useRouteError,
-} from 'react-router'
+import { useLoaderData, isRouteErrorResponse, useRouteError } from 'react-router'
 import { getPost } from '~/utils/content.server'
 import type { LoaderFunctionArgs } from 'react-router'
 import { useMemo } from 'react'
@@ -90,8 +86,7 @@ export default function BlogPost() {
   }, [post?.code])
 
   try {
-    const viewTransitionName =
-      post.frontmatter.meta?.title?.toLowerCase().replaceAll(' ', '-') || 'none'
+    const viewTransitionName = post.frontmatter.meta?.title?.toLowerCase().replaceAll(' ', '-') || 'none'
     return (
       <Article>
         <Title

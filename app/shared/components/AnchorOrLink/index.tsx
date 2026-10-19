@@ -37,10 +37,7 @@ const StyledLink = styled(Link)`
   ${linkStyleBase}
 `
 
-type AnchorProps = React.DetailedHTMLProps<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->
+type AnchorProps = React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
 
 export default function AnchorOrLink(
   props: AnchorProps & {

@@ -10,3 +10,4 @@ app/content/unpublished/
 
 /test-results/
 /playwright-report/
+/.vercel/
