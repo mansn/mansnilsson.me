@@ -65,10 +65,17 @@ export async function getIntro() {
  * @returns
  */
 export async function getPost(slug: string) {
-  const data = await fs.readFile(
-    path.join(process.cwd(), `app/content/posts/${slug}.mdx`),
-    'utf8'
-  )
+  let data: string
+  try {
+    data = await fs.readFile(
+      path.join(process.cwd(), `app/content/posts/${slug}.mdx`),
+      'utf8'
+    )
+  } catch (error) {
+    // A missing file means an unknown slug; let the route respond with 404
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null
+    throw error
+  }
   const post = await getMdx(data)
 
   return {
